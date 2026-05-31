@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VIP Birthday 🎂❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Tahoma;
+background:#000;
+overflow:hidden;
+color:white;
+}
+
+/* login */
+#login{
+position:fixed;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#000;
+z-index:9999;
+}
+
+.box{
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 0 30px #ff2e63;
+}
+
+input{
+padding:10px;
+border-radius:10px;
+border:none;
+text-align:center;
+}
+
+button{
+margin-top:10px;
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:#ff2e63;
+color:white;
+cursor:pointer;
+}
+
+/* countdown */
+#countdown{
+position:fixed;
+inset:0;
+display:none;
+justify-content:center;
+align-items:center;
+font-size:120px;
+font-weight:bold;
+z-index:9998;
+background:#000;
+}
+
+/* site */
+#site{
+display:none;
+text-align:center;
+position:relative;
+z-index:2;
+}
+
+.glass{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:20px;
+border-radius:20px;
+max-width:600px;
+margin:auto;
+box-shadow:0 0 40px #ff2e63;
+}
+
+h1{
+color:#ff2e63;
+text-shadow:0 0 20px #ff2e63;
+}
+
+img{
+width:180px;
+border-radius:20px;
+animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+/* hearts */
+.heart{
+position:absolute;
+color:#ff2e63;
+animation:up 6s linear infinite;
+}
+
+@keyframes up{
+from{transform:translateY(0);opacity:1;}
+to{transform:translateY(-100vh);opacity:0;}
+}
+
+/* canvas */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:0;
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<!-- login -->
+<div id="login">
+<div class="box">
+<h3>🔒 ادخل كلمة السر</h3>
+<input type="password" id="pass">
+<br>
+<button onclick="check()">دخول</button>
+</div>
+</div>
+
+<!-- countdown -->
+<div id="countdown">5</div>
+
+<!-- audio -->
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- site -->
+<div id="site">
+
+<div class="glass">
+<h1>🎂 Happy Birthday Mariam ❤️</h1>
+
+<img src="https://i.imgur.com/4M7IWwP.jpg">
+
+<p>كل سنة وانتي طيبة يا مريم ❤️✨</p>
+
+<button onclick="surprise()">🎁 مفاجأة</button>
+</div>
+
+</div>
+
+<script>
+
+function check(){
+let pass=document.getElementById("pass").value;
+
+if(pass==="mirae"){
+startCountdown();
+}else{
+alert("❌ كلمة السر غلط");
+}
+}
+
+/* countdown */
+function startCountdown(){
+document.getElementById("login").style.display="none";
+
+let c=document.getElementById("countdown");
+c.style.display="flex";
+
+let n=5;
+
+let x=setInterval(()=>{
+c.innerHTML=n;
+n--;
+
+if(n<0){
+clearInterval(x);
+c.style.display="none";
+openSite();
+}
+},1000);
+}
+
+function openSite(){
+document.getElementById("site").style.display="block";
+document.getElementById("music").play();
+
+startHearts();
+startFireworks();
+}
+
+/* hearts */
+function startHearts(){
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.fontSize=(Math.random()*20+10)+"px";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},200);
+}
+
+/* surprise */
+function surprise(){
+alert("🎉 كل سنة وانتي طيبة يا مريم ❤️✨");
+}
+
+/* fireworks */
+let canvas=document.getElementById("canvas");
+let ctx=canvas.getContext("2d");
+
+canvas.width=innerWidth;
+canvas.height=innerHeight;
+
+let particles=[];
+
+function Particle(x,y){
+this.x=x;
+this.y=y;
+this.dx=(Math.random()-0.5)*6;
+this.dy=(Math.random()-0.5)*6;
+this.life=100;
+}
+
+function explode(x,y){
+for(let i=0;i<40;i++){
+particles.push(new Particle(x,y));
+}
+}
+
+function animate(){
+ctx.fillStyle="rgba(0,0,0,0.2)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+particles.forEach((p,i)=>{
+p.x+=p.dx;
+p.y+=p.dy;
+p.life--;
+
+ctx.fillStyle="hsl("+Math.random()*360+",100%,50%)";
+ctx.fillRect(p.x,p.y,3,3);
+
+if(p.life<=0) particles.splice(i,1);
+});
+
+requestAnimationFrame(animate);
+}
+
+setInterval(()=>explode(Math.random()*innerWidth,Math.random()*innerHeight/2),700);
+animate();
+
+</script>
+
+</body>
+</html>
