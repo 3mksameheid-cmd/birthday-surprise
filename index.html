@@ -20,10 +20,7 @@
     --pink:#ff4f8b;
     --pink2:#ff86aa;
     --dark:#08050c;
-    --card:rgba(255,255,255,.055);
     --line:rgba(255,120,165,.20);
-    --text:#f8e9ef;
-    --muted:#c995a9;
 }
 
 html{
@@ -38,9 +35,7 @@ body{
     overflow-x:hidden;
 }
 
-/* =========================
-   BACKGROUND
-========================= */
+/* الخلفية */
 
 body::before{
     content:"";
@@ -99,9 +94,7 @@ body::before{
     }
 }
 
-/* =========================
-   FLOATING HEARTS
-========================= */
+/* القلوب */
 
 .particle{
     position:fixed;
@@ -148,62 +141,35 @@ body::before{
     }
 }
 
-/* =========================
-   MAIN
-========================= */
+/* المحتوى */
 
 .wrap{
     position:relative;
     z-index:5;
-
     max-width:980px;
-
     margin:auto;
-
-    padding:
-    34px 18px 70px;
+    padding:34px 18px 70px;
 }
 
 .topline{
     text-align:center;
-
     color:#b97991;
-
     font-size:.72rem;
-
     letter-spacing:2px;
-
     margin-bottom:15px;
-
-    opacity:.85;
 }
 
-/* =========================
-   HERO
-========================= */
+/* الصور */
 
 .hero{
-
     display:grid;
-
-    grid-template-columns:
-    190px
-    1fr
-    190px;
-
+    grid-template-columns:190px 1fr 190px;
     gap:20px;
-
     align-items:center;
-
     margin-bottom:30px;
 }
 
-/* =========================
-   PHOTOS
-========================= */
-
 .photo-card{
-
     background:
     linear-gradient(
         145deg,
@@ -211,12 +177,9 @@ body::before{
         rgba(255,255,255,.035)
     );
 
-    border:
-    1px solid
-    rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.12);
 
-    padding:
-    10px 10px 34px;
+    padding:10px 10px 34px;
 
     border-radius:8px;
 
@@ -224,13 +187,11 @@ body::before{
     0 20px 55px rgba(0,0,0,.55);
 
     position:relative;
-
     overflow:hidden;
 
     backdrop-filter:blur(8px);
 
-    transition:
-    .55s cubic-bezier(.2,.8,.2,1);
+    transition:.55s;
 }
 
 .photo-card.left{
@@ -249,11 +210,9 @@ body::before{
 }
 
 .photo-card::after{
-
     content:"";
 
     position:absolute;
-
     inset:0;
 
     background:
@@ -281,15 +240,10 @@ body::before{
 }
 
 .photo-card img{
-
     width:100%;
-
     height:205px;
-
     object-fit:cover;
-
     display:block;
-
     border-radius:4px;
 
     filter:
@@ -304,15 +258,10 @@ body::before{
 }
 
 .pin{
-
     position:absolute;
-
     top:6px;
     left:50%;
-
-    transform:
-    translateX(-50%);
-
+    transform:translateX(-50%);
     font-size:15px;
 
     filter:
@@ -324,11 +273,8 @@ body::before{
 }
 
 .caption{
-
     position:absolute;
-
     bottom:6px;
-
     left:0;
     right:0;
 
@@ -341,25 +287,17 @@ body::before{
     font-size:.9rem;
 }
 
-/* =========================
-   CENTER TITLE
-========================= */
+/* العنوان */
 
 .center{
-
     text-align:center;
-
     padding:10px;
 }
 
 .mini-heart{
-
     display:inline-block;
-
     font-size:1.3rem;
-
-    animation:
-    heartbeat 1.7s infinite;
+    animation:heartbeat 1.7s infinite;
 }
 
 @keyframes heartbeat{
@@ -378,11 +316,8 @@ body::before{
 }
 
 .center h1{
-
     font-size:2.55rem;
-
     line-height:1.35;
-
     font-weight:800;
 
     text-shadow:
@@ -391,11 +326,8 @@ body::before{
 }
 
 .center h2{
-
     font-size:2rem;
-
     margin-top:2px;
-
     font-weight:800;
 
     background:
@@ -421,36 +353,26 @@ body::before{
 @keyframes gradient{
 
     to{
-        background-position:
-        250% center;
+        background-position:250% center;
     }
 }
 
 .center .sub{
-
     color:#d7a2b5;
-
     line-height:2;
-
     margin-top:13px;
-
     font-size:.93rem;
 }
 
 .typed{
-
     min-height:30px;
-
     color:#ffb3c8;
-
     font-size:.9rem;
-
     margin-top:9px;
 }
 
 .cursor{
-    animation:
-    blink .8s infinite;
+    animation:blink .8s infinite;
 }
 
 @keyframes blink{
@@ -459,21 +381,15 @@ body::before{
     }
 }
 
-/* =========================
-   COUNTDOWN
-========================= */
+/* العد التنازلي */
 
 .count-box{
-
     max-width:500px;
-
-    margin:
-    0 auto 24px;
+    margin:0 auto 24px;
 
     border-radius:22px;
 
-    padding:
-    18px 20px;
+    padding:18px 20px;
 
     text-align:center;
 
@@ -485,8 +401,7 @@ body::before{
     );
 
     border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
     box-shadow:
     0 18px 55px rgba(0,0,0,.28);
@@ -495,27 +410,19 @@ body::before{
 }
 
 .count-label{
-
     color:#ff9db8;
-
     font-size:.85rem;
-
     margin-bottom:9px;
 }
 
 .count{
-
     display:flex;
-
     justify-content:center;
-
     gap:34px;
 }
 
 .n{
-
     font-size:2.25rem;
-
     font-weight:800;
 
     color:#ff5a91;
@@ -526,65 +433,42 @@ body::before{
 }
 
 .t{
-
     font-size:.72rem;
-
     color:#b77c93;
 }
 
-/* =========================
-   WISH
-========================= */
-
 .wish{
-
     text-align:center;
-
     color:#ffd0dc;
-
     font-size:1.05rem;
-
     font-weight:600;
-
-    margin:
-    18px 0 35px;
+    margin:18px 0 35px;
 }
 
 .wish span{
-
     display:inline-block;
-
-    animation:
-    float 2.2s
-    ease-in-out infinite;
+    animation:float 2.2s ease-in-out infinite;
 }
 
 @keyframes float{
 
     50%{
-        transform:
-        translateY(-5px);
+        transform:translateY(-5px);
     }
 }
 
-/* =========================
-   DIVIDER
-========================= */
+/* الفاصل */
 
 .divider{
-
     display:flex;
-
     align-items:center;
-
     gap:12px;
 
     color:#8f526c;
 
     font-size:.7rem;
 
-    margin:
-    25px auto;
+    margin:25px auto;
 
     max-width:700px;
 }
@@ -607,28 +491,18 @@ body::before{
     );
 }
 
-/* =========================
-   ENVELOPE
-========================= */
+/* الظرف */
 
 .envelope-section{
-
     text-align:center;
-
-    margin:
-    12px 0 35px;
+    margin:12px 0 35px;
 }
 
 .hint{
-
     color:#ff9bb7;
-
     font-size:.9rem;
-
     margin-bottom:16px;
-
-    animation:
-    pulse 2s infinite;
+    animation:pulse 2s infinite;
 }
 
 @keyframes pulse{
@@ -641,7 +515,6 @@ body::before{
 .envelope{
 
     width:310px;
-
     height:195px;
 
     margin:auto;
@@ -662,7 +535,6 @@ body::before{
 }
 
 .envelope:hover{
-
     transform:
     translateY(-6px)
     scale(1.025);
@@ -671,7 +543,6 @@ body::before{
 .env-back{
 
     position:absolute;
-
     inset:0;
 
     border-radius:9px;
@@ -729,7 +600,6 @@ body::before{
     left:0;
 
     width:100%;
-
     height:110px;
 
     background:
@@ -756,8 +626,7 @@ body::before{
 }
 
 .envelope.open .flap{
-    transform:
-    rotateX(180deg);
+    transform:rotateX(180deg);
 }
 
 .seal{
@@ -767,7 +636,6 @@ body::before{
     z-index:7;
 
     left:50%;
-
     top:91px;
 
     transform:
@@ -787,9 +655,7 @@ body::before{
     scale(.4);
 }
 
-/* =========================
-   LETTER
-========================= */
+/* الرسالة */
 
 .letter{
 
@@ -802,8 +668,7 @@ body::before{
 
     border-radius:24px;
 
-    padding:
-    30px 27px;
+    padding:30px 27px;
 
     background:
     linear-gradient(
@@ -813,12 +678,10 @@ body::before{
     );
 
     border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
     box-shadow:
-    0 18px 55px
-    rgba(0,0,0,.28);
+    0 18px 55px rgba(0,0,0,.28);
 
     backdrop-filter:blur(16px);
 
@@ -841,11 +704,9 @@ body::before{
     position:absolute;
 
     top:0;
-
     right:12%;
 
     width:180px;
-
     height:1px;
 
     background:
@@ -864,6 +725,7 @@ body::before{
 
     from{
         opacity:0;
+
         transform:
         translateY(25px)
         scale(.98);
@@ -909,8 +771,7 @@ body::before{
 
     text-align:center;
 
-    margin:
-    20px 0;
+    margin:20px 0;
 }
 
 .sign{
@@ -926,21 +787,17 @@ body::before{
     margin-top:22px;
 }
 
-/* =========================
-   MUSIC PLAYER
-========================= */
+/* مشغل الأغنية */
 
 .player{
 
     max-width:560px;
 
-    margin:
-    0 auto 30px;
+    margin:0 auto 30px;
 
     border-radius:20px;
 
-    padding:
-    13px 15px;
+    padding:13px 15px;
 
     display:flex;
 
@@ -956,12 +813,10 @@ body::before{
     );
 
     border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
     box-shadow:
-    0 18px 55px
-    rgba(0,0,0,.28);
+    0 18px 55px rgba(0,0,0,.28);
 
     backdrop-filter:blur(16px);
 }
@@ -969,13 +824,11 @@ body::before{
 .cover{
 
     width:54px;
-
     height:54px;
 
     border-radius:13px;
 
     display:grid;
-
     place-items:center;
 
     font-size:1.45rem;
@@ -1015,20 +868,16 @@ body::before{
 }
 
 .artist{
-
     font-size:.76rem;
-
     color:#b77b92;
 }
 
 .play{
 
     width:43px;
-
     height:43px;
 
     border:0;
-
     border-radius:50%;
 
     cursor:pointer;
@@ -1055,9 +904,7 @@ body::before{
     transform:scale(1.08);
 }
 
-/* =========================
-   MEMORY
-========================= */
+/* الذكريات */
 
 .memory{
 
@@ -1080,12 +927,10 @@ body::before{
     );
 
     border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
     box-shadow:
-    0 18px 55px
-    rgba(0,0,0,.28);
+    0 18px 55px rgba(0,0,0,.28);
 
     backdrop-filter:blur(16px);
 }
@@ -1122,15 +967,13 @@ body::before{
 .dot{
 
     width:6px;
-
     height:6px;
 
     background:#ff6a99;
 
     border-radius:50%;
 
-    animation:
-    dot 1.5s infinite;
+    animation:dot 1.5s infinite;
 }
 
 .dot:nth-child(2){
@@ -1144,16 +987,12 @@ body::before{
 @keyframes dot{
 
     50%{
-        transform:
-        translateY(-4px);
-
+        transform:translateY(-4px);
         opacity:.4;
     }
 }
 
-/* =========================
-   FINAL
-========================= */
+/* النهاية */
 
 .final{
 
@@ -1165,8 +1004,7 @@ body::before{
 
     border-radius:22px;
 
-    padding:
-    25px 20px;
+    padding:25px 20px;
 
     background:
     linear-gradient(
@@ -1176,12 +1014,10 @@ body::before{
     );
 
     border:
-    1px solid
-    var(--line);
+    1px solid var(--line);
 
     box-shadow:
-    0 18px 55px
-    rgba(0,0,0,.28);
+    0 18px 55px rgba(0,0,0,.28);
 
     backdrop-filter:blur(16px);
 }
@@ -1219,10 +1055,6 @@ body::before{
     color:#ff739f;
 }
 
-/* =========================
-   FLASH
-========================= */
-
 .flash{
 
     position:fixed;
@@ -1253,29 +1085,22 @@ body::before{
     }
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* الموبايل */
 
 @media(max-width:760px){
 
     .hero{
-
         grid-template-columns:1fr;
-
         max-width:390px;
     }
 
     .photo-card{
-
         width:180px;
-
         margin:auto;
     }
 
     .photo-card.left,
     .photo-card.right{
-
         transform:rotate(0);
     }
 
@@ -1300,22 +1125,16 @@ body::before{
     }
 
     .envelope{
-
         width:270px;
-
         height:170px;
     }
 
     .letter{
-
-        padding:
-        24px 18px;
+        padding:24px 18px;
     }
 
     .letter p{
-
         font-size:.98rem;
-
         line-height:2;
     }
 }
@@ -1333,781 +1152,818 @@ body::before{
 
 <div class="wrap">
 
-    <div class="topline">
-        A LITTLE SURPRISE • MADE WITH LOVE
-    </div>
+<div class="topline">
+A LITTLE SURPRISE • MADE WITH LOVE
+</div>
 
 
-    <!-- ================= HERO ================= -->
+<!-- الصور والعنوان -->
 
-    <section class="hero">
+<section class="hero">
 
-        <div class="photo-card left">
+<div class="photo-card left">
 
-            <div class="pin">
-                📌
-            </div>
+<div class="pin">📌</div>
 
-            <img
-                src="child.jpg"
-                alt="رودينا وهي صغيرة"
-            >
+<img
+src="child.jpg"
+alt="رودينا وهي صغيرة"
+>
 
-            <div class="caption">
-                رودينا زمان 🤍
-            </div>
-
-        </div>
-
-
-        <div class="center">
-
-            <div class="mini-heart">
-                ♥
-            </div>
-
-            <h1>
-                عيد ميلاد سعيد
-            </h1>
-
-            <h2>
-                يا رودينا ❤️
-            </h2>
-
-            <div class="sub">
-                اليوم مش زي أي يوم...<br>
-                النهارده اليوم اللي الدنيا بقت أحلى بوجودك.
-            </div>
-
-            <div class="typed">
-                <span id="typed"></span>
-                <span class="cursor">|</span>
-            </div>
-
-        </div>
-
-
-        <div class="photo-card right">
-
-            <div class="pin">
-                📌
-            </div>
-
-            <img
-                src="now.jpg"
-                alt="رودينا دلوقتي"
-            >
-
-            <div class="caption">
-                رودينا دلوقتي ✨
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= COUNTDOWN ================= -->
-
-    <div class="count-box">
-
-        <div class="count-label">
-            ⏳ مستني اللحظة دي من زمان
-        </div>
-
-        <div class="count">
-
-            <div>
-                <div class="n" id="h">
-                    00
-                </div>
-
-                <div class="t">
-                    ساعة
-                </div>
-            </div>
-
-
-            <div>
-                <div class="n" id="m">
-                    00
-                </div>
-
-                <div class="t">
-                    دقيقة
-                </div>
-            </div>
-
-
-            <div>
-                <div class="n" id="s">
-                    00
-                </div>
-
-                <div class="t">
-                    ثانية
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="wish">
-
-        <span>✨</span>
-
-        كل سنة وإنتي أجمل حاجة حصلتلي
-
-        <span>✨</span>
-
-    </div>
-
-
-    <div class="divider">
-        في حاجة صغيرة مستنياكي تحت
-    </div>
-
-
-    <!-- ================= ENVELOPE ================= -->
-
-    <section class="envelope-section">
-
-        <div class="hint">
-
-            اضغطي على الظرف...
-            بس متقوليش إني محذرتكيش 💌
-
-        </div>
-
-
-        <div
-            class="envelope"
-            id="envelope"
-            onclick="openEnvelope()"
-        >
-
-            <div class="env-back"></div>
-
-            <div class="flap"></div>
-
-            <div class="env-front"></div>
-
-            <div class="seal">
-                ❤️
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= LETTER ================= -->
-
-    <section
-        class="letter"
-        id="letter"
-    >
-
-        <h3>
-            رسالة من قلبي ليكي ❤️
-        </h3>
-
-
-        <p>
-            يا رودينا،
-        </p>
-
-
-        <p>
-            أنا مش عارف أبدأ الكلام منين، بس عارف إن النهارده مينفعش يعدي عادي من غير ما أقولك كل اللي جوايا. يمكن الكلام ده بسيط، بس كل كلمة فيه طالعة بجد من قلبي.
-        </p>
-
-
-        <p>
-            كل سنة وإنتي طيبة يا أجمل رودينا. من أول ما عرفتك وإنتي ليكي مكان مختلف عندي، ومع الوقت المكان ده كبر لحد ما بقيتي جزء مهم جدًا من حياتي.
-        </p>
-
-
-        <p>
-            وأنا بتفرج على صورتك وإنتي صغيرة، وبعدين صورتك دلوقتي، بحس قد إيه الوقت بيجري بسرعة. بس الحاجة الوحيدة اللي أنا متأكد منها إن وجودك في حياتي كان من أحلى الحاجات اللي حصلتلي.
-        </p>
-
-
-        <p>
-            بحب ضحكتك، وطريقتك، والكلام اللي بينا، وحتى التفاصيل الصغيرة اللي يمكن إنتي مش واخدة بالك منها. الحاجات دي كلها بالنسبة لي مش صغيرة خالص.
-        </p>
-
-
-        <p>
-            نفسي السنة الجديدة دي تكون أهدى وأحلى عليكي، وتحققي فيها كل حاجة نفسك فيها، وأفضل دايمًا الشخص اللي يفرح لفرحتك ويسندك لما الدنيا تضايقك.
-        </p>
-
-
-        <p>
-            ومهما كتبت، مش هعرف أوصفلك قد إنتي غالية عندي. بس لو في حاجة واحدة عايزك تفتكريها من الرسالة دي فهي:
-            <b>
-                أنا بحبك، وفرحان إنك في حياتي.
-            </b>
-        </p>
-
-
-        <p>
-            كل سنة وإنتي طيبة يا رودينا، وكل سنة وإنتي أقرب وأغلى وأجمل. ❤️
-        </p>
-
-
-        <div class="small-note">
-
-            ودي مش مجرد رسالة عيد ميلاد...
-            دي حاجة صغيرة من حاجات كتير نفسي أقولها ليكي.
-
-        </div>
-
-
-        <div class="sign">
-            سامح ❤️
-        </div>
-
-    </section>
-
-
-    <!-- ================= MUSIC ================= -->
-
-    <div class="divider">
-        ودي الأغنية اللي اخترتها مخصوص
-    </div>
-
-
-    <div class="player">
-
-        <div class="cover">
-            🎵
-        </div>
-
-
-        <div class="meta">
-
-            <div class="song">
-                أغنية ليكي
-            </div>
-
-            <div class="artist">
-                اختارتها مخصوص عشانك • سامح
-            </div>
-
-        </div>
-
-
-        <button
-            class="play"
-            id="btn"
-            onclick="toggle()"
-        >
-            ▶
-        </button>
-
-    </div>
-
-
-    <!-- ================= MEMORY ================= -->
-
-    <section class="memory">
-
-        <h3>
-            عارفة إيه أحلى حاجة؟
-        </h3>
-
-        <p>
-            إن كل مرة أشوفك فيها، حتى لو كانت لحظة عادية جدًا، بتفضل في دماغي بطريقة مش عادية.
-        </p>
-
-
-        <div class="dots">
-
-            <i class="dot"></i>
-            <i class="dot"></i>
-            <i class="dot"></i>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FINAL ================= -->
-
-    <section class="final">
-
-        <div class="big">
-            "كل سنة وإنتي في حياتي يا رودينا ❤️"
-        </div>
-
-        <div class="under">
-            اتعملت مخصوص ليكي... بكل الحب اللي عند سامح.
-        </div>
-
-    </section>
-
-
-    <div class="footer">
-
-        Made with
-        <b>♥</b>
-        by Samah • 2026
-
-    </div>
+<div class="caption">
+رودينا زمان 🤍
+</div>
 
 </div>
 
 
-<!-- ================= MUSIC FILE ================= -->
+<div class="center">
 
-<audio
-    id="audio"
-    loop
+<div class="mini-heart">
+♥
+</div>
+
+<h1>
+عيد ميلاد سعيد
+</h1>
+
+<h2>
+يا رودينا ❤️
+</h2>
+
+<div class="sub">
+اليوم مش زي أي يوم...<br>
+النهارده اليوم اللي الدنيا بقت أحلى بوجودك.
+</div>
+
+<div class="typed">
+<span id="typed"></span>
+<span class="cursor">|</span>
+</div>
+
+</div>
+
+
+<div class="photo-card right">
+
+<div class="pin">📌</div>
+
+<img
+src="now.jpg"
+alt="رودينا دلوقتي"
 >
 
-    <source
-        src="song.mp3"
-        type="audio/mpeg"
-    >
+<div class="caption">
+رودينا دلوقتي ✨
+</div>
 
-</audio>
+</div>
+
+</section>
+
+
+<!-- العد -->
+
+<div class="count-box">
+
+<div class="count-label">
+⏳ مستني اللحظة دي من زمان
+</div>
+
+<div class="count">
+
+<div>
+<div class="n" id="h">00</div>
+<div class="t">ساعة</div>
+</div>
+
+<div>
+<div class="n" id="m">00</div>
+<div class="t">دقيقة</div>
+</div>
+
+<div>
+<div class="n" id="s">00</div>
+<div class="t">ثانية</div>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="wish">
+
+<span>✨</span>
+
+كل سنة وإنتي أجمل حاجة حصلتلي
+
+<span>✨</span>
+
+</div>
+
+
+<div class="divider">
+في حاجة صغيرة مستنياكي تحت
+</div>
+
+
+<!-- الظرف -->
+
+<section class="envelope-section">
+
+<div class="hint">
+اضغطي على الظرف... بس متقوليش إني محذرتكيش 💌
+</div>
+
+<div
+class="envelope"
+id="envelope"
+onclick="openEnvelope()"
+>
+
+<div class="env-back"></div>
+
+<div class="flap"></div>
+
+<div class="env-front"></div>
+
+<div class="seal">
+❤️
+</div>
+
+</div>
+
+</section>
+
+
+<!-- الرسالة -->
+
+<section
+class="letter"
+id="letter"
+>
+
+<h3>
+رسالة من قلبي ليكي ❤️
+</h3>
+
+<p>
+يا رودينا،
+</p>
+
+<p>
+أنا مش عارف أبدأ الكلام منين، بس عارف إن النهارده مينفعش يعدي عادي من غير ما أقولك كل اللي جوايا. يمكن الكلام ده بسيط، بس كل كلمة فيه طالعة بجد من قلبي.
+</p>
+
+<p>
+كل سنة وإنتي طيبة يا أجمل رودينا. من أول ما عرفتك وإنتي ليكي مكان مختلف عندي، ومع الوقت المكان ده كبر لحد ما بقيتي جزء مهم جدًا من حياتي.
+</p>
+
+<p>
+وأنا بتفرج على صورتك وإنتي صغيرة، وبعدين صورتك دلوقتي، بحس قد إيه الوقت بيجري بسرعة. بس الحاجة الوحيدة اللي أنا متأكد منها إن وجودك في حياتي كان من أحلى الحاجات اللي حصلتلي.
+</p>
+
+<p>
+بحب ضحكتك، وطريقتك، والكلام اللي بينا، وحتى التفاصيل الصغيرة اللي يمكن إنتي مش واخدة بالك منها. الحاجات دي كلها بالنسبة لي مش صغيرة خالص.
+</p>
+
+<p>
+نفسي السنة الجديدة دي تكون أهدى وأحلى عليكي، وتحققي فيها كل حاجة نفسك فيها، وأفضل دايمًا الشخص اللي يفرح لفرحتك ويسندك لما الدنيا تضايقك.
+</p>
+
+<p>
+ومهما كتبت، مش هعرف أوصفلك قد إنتي غالية عندي. بس لو في حاجة واحدة عايزك تفتكريها من الرسالة دي فهي:
+<b>
+أنا بحبك، وفرحان إنك في حياتي.
+</b>
+</p>
+
+<p>
+كل سنة وإنتي طيبة يا رودينا، وكل سنة وإنتي أقرب وأغلى وأجمل. ❤️
+</p>
+
+<div class="small-note">
+ودي مش مجرد رسالة عيد ميلاد...
+دي حاجة صغيرة من حاجات كتير نفسي أقولها ليكي.
+</div>
+
+<div class="sign">
+سامح ❤️
+</div>
+
+</section>
+
+
+<!-- الأغنية -->
+
+<div class="divider">
+ودي الأغنية اللي اخترتها مخصوص
+</div>
+
+
+<div class="player">
+
+<div class="cover">
+🎵
+</div>
+
+<div class="meta">
+
+<div class="song">
+أغنية ليكي
+</div>
+
+<div class="artist">
+عمرو دياب • تملي معاك
+</div>
+
+</div>
+
+<button
+class="play"
+id="btn"
+onclick="toggleMusic()"
+>
+▶
+</button>
+
+</div>
+
+
+<!-- جزء صغير إضافي -->
+
+<section class="memory">
+
+<h3>
+عارفة إيه أحلى حاجة؟
+</h3>
+
+<p>
+إن كل مرة أشوفك فيها، حتى لو كانت لحظة عادية جدًا، بتفضل في دماغي بطريقة مش عادية.
+</p>
+
+<div class="dots">
+
+<i class="dot"></i>
+<i class="dot"></i>
+<i class="dot"></i>
+
+</div>
+
+</section>
+
+
+<!-- النهاية -->
+
+<section class="final">
+
+<div class="big">
+"كل سنة وإنتي في حياتي يا رودينا ❤️"
+</div>
+
+<div class="under">
+اتعملت مخصوص ليكي... بكل الحب اللي عند سامح.
+</div>
+
+</section>
+
+
+<div class="footer">
+
+Made with
+<b>♥</b>
+by Sameh • 2026
+
+</div>
+
+</div>
+
+
+<!--
+=========================================
+YOUTUBE PLAYER
+الأغنية:
+عمرو دياب - تملي معاك
+=========================================
+-->
+
+<div
+id="youtube-player"
+style="
+position:fixed;
+width:1px;
+height:1px;
+left:-100px;
+top:-100px;
+opacity:0;
+pointer-events:none;
+"
+></div>
 
 
 <script>
 
-/* =========================================
-   TYPING ANIMATION
-========================================= */
+/* =====================================
+   كتابة متحركة
+===================================== */
 
 const phrases = [
 
-    "عملتلك حاجة صغيرة بس من قلبي...",
+"عملتلك حاجة صغيرة بس من قلبي...",
 
-    "مش كل الكلام بيتقال... بعضه بيتعمل ❤️",
+"مش كل الكلام بيتقال... بعضه بيتعمل ❤️",
 
-    "والنهارده كان لازم يبقى مختلف.",
+"والنهارده كان لازم يبقى مختلف.",
 
-    "كل سنة وإنتي معايا يا رودينا."
+"كل سنة وإنتي معايا يا رودينا."
 
 ];
 
-let pi = 0;
-let ci = 0;
+let phraseIndex = 0;
+let charIndex = 0;
 let deleting = false;
 
 const typed =
-    document.getElementById("typed");
+document.getElementById("typed");
 
 
 function typeText(){
 
-    const phrase =
-        phrases[pi];
+const phrase =
+phrases[phraseIndex];
+
+typed.textContent =
+phrase.slice(0,charIndex);
 
 
-    typed.textContent =
-        phrase.slice(0,ci);
+if(!deleting && charIndex < phrase.length){
 
+charIndex++;
 
-    if(!deleting && ci < phrase.length){
+setTimeout(
+typeText,
+55
+);
 
-        ci++;
+}
 
-        setTimeout(
-            typeText,
-            55
-        );
+else if(!deleting){
 
-    }
+deleting = true;
 
-    else if(!deleting){
+setTimeout(
+typeText,
+1500
+);
 
-        deleting = true;
+}
 
-        setTimeout(
-            typeText,
-            1500
-        );
+else if(charIndex > 0){
 
-    }
+charIndex--;
 
-    else if(ci > 0){
+setTimeout(
+typeText,
+28
+);
 
-        ci--;
+}
 
-        setTimeout(
-            typeText,
-            28
-        );
+else{
 
-    }
+deleting = false;
 
-    else{
+phraseIndex =
+(phraseIndex + 1)
+%
+phrases.length;
 
-        deleting = false;
+setTimeout(
+typeText,
+300
+);
 
-        pi =
-            (pi + 1)
-            %
-            phrases.length;
-
-        setTimeout(
-            typeText,
-            300
-        );
-
-    }
+}
 
 }
 
 typeText();
 
 
-/* =========================================
-   FLOATING PARTICLES
-========================================= */
+/* =====================================
+   القلوب المتحركة
+===================================== */
 
 function createParticle(){
 
-    const e =
-        document.createElement("div");
+const e =
+document.createElement("div");
 
-    e.className =
-        "particle";
-
-
-    const items = [
-        "💗",
-        "💕",
-        "💓",
-        "💖",
-        "❤️",
-        "✨",
-        "·"
-    ];
+e.className =
+"particle";
 
 
-    e.textContent =
-        items[
-            Math.floor(
-                Math.random()
-                *
-                items.length
-            )
-        ];
+const items = [
+"💗",
+"💕",
+"💓",
+"💖",
+"❤️",
+"✨",
+"·"
+];
 
 
-    e.style.left =
-        Math.random()
-        *
-        100
-        +
-        "vw";
+e.textContent =
+items[
+Math.floor(
+Math.random()
+*
+items.length
+)
+];
 
 
-    e.style.fontSize =
-        12
-        +
-        Math.random()
-        *
-        19
-        +
-        "px";
+e.style.left =
+Math.random()
+*
+100
++
+"vw";
 
 
-    e.style.setProperty(
-        "--x",
-        (Math.random()*180-90)
-        +
-        "px"
-    );
+e.style.fontSize =
+12
++
+Math.random()*19
++
+"px";
 
 
-    e.style.animationDuration =
-        6
-        +
-        Math.random()*8
-        +
-        "s";
-
-
-    document.body.appendChild(e);
-
-
-    setTimeout(
-        () => e.remove(),
-        15000
-    );
-
-}
-
-
-setInterval(
-    createParticle,
-    520
+e.style.setProperty(
+"--x",
+(Math.random()*180-90)
++
+"px"
 );
 
 
-/* =========================================
-   COUNTDOWN
-========================================= */
-
-function tick(){
-
-    const target =
-        new Date(
-            "2026-08-24T00:00:00"
-        ).getTime();
+e.style.animationDuration =
+6
++
+Math.random()*8
++
+"s";
 
 
-    const time =
-        target - Date.now();
+document.body.appendChild(e);
 
 
-    const h =
-        document.getElementById("h");
-
-    const m =
-        document.getElementById("m");
-
-    const s =
-        document.getElementById("s");
-
-
-    if(time <= 0){
-
-        h.textContent = "00";
-        m.textContent = "00";
-        s.textContent = "00";
-
-        return;
-    }
-
-
-    h.textContent =
-        String(
-            Math.floor(
-                time / 3600000
-            )
-        ).padStart(2,"0");
-
-
-    m.textContent =
-        String(
-            Math.floor(
-                (time % 3600000)
-                /
-                60000
-            )
-        ).padStart(2,"0");
-
-
-    s.textContent =
-        String(
-            Math.floor(
-                (time % 60000)
-                /
-                1000
-            )
-        ).padStart(2,"0");
+setTimeout(
+()=>e.remove(),
+15000
+);
 
 }
 
 
 setInterval(
-    tick,
-    1000
+createParticle,
+520
+);
+
+
+/* =====================================
+   العد التنازلي
+===================================== */
+
+function tick(){
+
+const target =
+new Date(
+"2026-08-24T00:00:00"
+).getTime();
+
+
+const time =
+target -
+Date.now();
+
+
+const h =
+document.getElementById("h");
+
+const m =
+document.getElementById("m");
+
+const s =
+document.getElementById("s");
+
+
+if(time <= 0){
+
+h.textContent="00";
+m.textContent="00";
+s.textContent="00";
+
+return;
+
+}
+
+
+h.textContent =
+String(
+Math.floor(
+time /
+3600000
+)
+).padStart(2,"0");
+
+
+m.textContent =
+String(
+Math.floor(
+(time %
+3600000)
+/
+60000
+)
+).padStart(2,"0");
+
+
+s.textContent =
+String(
+Math.floor(
+(time %
+60000)
+/
+1000
+)
+).padStart(2,"0");
+
+}
+
+
+setInterval(
+tick,
+1000
 );
 
 tick();
 
 
-/* =========================================
-   ENVELOPE
-========================================= */
+/* =====================================
+   YOUTUBE PLAYER
+===================================== */
 
-let opened = false;
+let player = null;
+let musicReady = false;
+let musicPlaying = false;
+
+
+/*
+رابط الفيديو:
+https://youtu.be/EgmXTmj62ic
+*/
+
+function onYouTubeIframeAPIReady(){
+
+player =
+new YT.Player(
+"youtube-player",
+{
+
+height:"1",
+
+width:"1",
+
+videoId:"EgmXTmj62ic",
+
+playerVars:{
+autoplay:0,
+controls:0,
+disablekb:1,
+fs:0,
+loop:1,
+playlist:"EgmXTmj62ic",
+playsinline:1,
+rel:0
+},
+
+events:{
+onReady:function(){
+
+musicReady=true;
+
+},
+
+onStateChange:function(event){
+
+if(
+event.data ===
+YT.PlayerState.PLAYING
+){
+
+musicPlaying=true;
+
+document.getElementById(
+"btn"
+).textContent="❚❚";
+
+}
+
+}
+
+}
+
+}
+);
+
+}
+
+
+/* تحميل API يوتيوب */
+
+const ytScript =
+document.createElement("script");
+
+ytScript.src =
+"https://www.youtube.com/iframe_api";
+
+document.head.appendChild(
+ytScript
+);
+
+
+/* =====================================
+   تشغيل الأغنية
+===================================== */
+
+function startMusic(){
+
+if(!player)
+return;
+
+try{
+
+player.unMute();
+
+player.setVolume(100);
+
+player.playVideo();
+
+musicPlaying=true;
+
+document.getElementById(
+"btn"
+).textContent="❚❚";
+
+}
+
+catch(error){
+
+console.log(
+"تعذر تشغيل الموسيقى",
+error
+);
+
+}
+
+}
+
+
+/* =====================================
+   زر الموسيقى
+===================================== */
+
+function toggleMusic(){
+
+if(!player)
+return;
+
+
+if(musicPlaying){
+
+player.pauseVideo();
+
+musicPlaying=false;
+
+document.getElementById(
+"btn"
+).textContent="▶";
+
+}
+
+else{
+
+startMusic();
+
+}
+
+}
+
+
+/* =====================================
+   فتح الظرف
+===================================== */
+
+let opened=false;
 
 
 function openEnvelope(){
 
-    if(opened)
-        return;
+if(opened)
+return;
 
 
-    opened = true;
+opened=true;
 
 
-    const envelope =
-        document.getElementById(
-            "envelope"
-        );
-
-
-    const letter =
-        document.getElementById(
-            "letter"
-        );
-
-
-    const flash =
-        document.getElementById(
-            "flash"
-        );
-
-
-    envelope.classList.add(
-        "open"
-    );
-
-
-    flash.classList.add(
-        "on"
-    );
-
-
-    setTimeout(
-        () => {
-            flash.classList.remove(
-                "on"
-            );
-        },
-        500
-    );
-
-
-    /* انفجار قلوب */
-
-    for(
-        let i = 0;
-        i < 45;
-        i++
-    ){
-
-        setTimeout(
-            createParticle,
-            i * 45
-        );
-
-    }
-
-
-    setTimeout(
-        () => {
-
-            letter.classList.add(
-                "show"
-            );
-
-
-            letter.scrollIntoView({
-                behavior:"smooth",
-                block:"center"
-            });
-
-        },
-        650
-    );
-
-
-    /* تشغيل الأغنية */
-
-    audio.play()
-        .then(
-            () => {
-
-                playing = true;
-
-                btn.textContent =
-                    "❚❚";
-
-            }
-        )
-        .catch(
-            () => {}
-        );
-
-}
-
-
-/* =========================================
-   MUSIC
-========================================= */
-
-let playing = false;
-
-const audio =
-    document.getElementById(
-        "audio"
-    );
-
-
-const btn =
-    document.getElementById(
-        "btn"
-    );
-
-
-function toggle(){
-
-    if(audio.paused){
-
-        audio.play()
-            .then(
-                () => {
-
-                    playing = true;
-
-                    btn.textContent =
-                        "❚❚";
-
-                }
-            );
-
-    }
-
-    else{
-
-        audio.pause();
-
-        playing = false;
-
-        btn.textContent =
-            "▶";
-
-    }
-
-}
-
-
-/* =========================================
-   TRY AUTOPLAY
-========================================= */
-
-window.addEventListener(
-    "load",
-    () => {
-
-        audio.play()
-            .then(
-                () => {
-
-                    playing = true;
-
-                    btn.textContent =
-                        "❚❚";
-
-                }
-            )
-            .catch(
-                () => {}
-            );
-
-    }
+const envelope =
+document.getElementById(
+"envelope"
 );
+
+
+const letter =
+document.getElementById(
+"letter"
+);
+
+
+const flash =
+document.getElementById(
+"flash"
+);
+
+
+envelope.classList.add(
+"open"
+);
+
+
+/*
+مهم:
+بمجرد ضغط رودينا على الظرف،
+المتصفح يعتبر ده تفاعل من المستخدم،
+فبنبدأ الأغنية هنا.
+*/
+
+startMusic();
+
+
+/* فلاش */
+
+flash.classList.add("on");
+
+
+setTimeout(
+()=>{
+flash.classList.remove("on");
+},
+500
+);
+
+
+/* انفجار قلوب */
+
+for(
+let i=0;
+i<55;
+i++
+){
+
+setTimeout(
+createParticle,
+i*45
+);
+
+}
+
+
+/* إظهار الرسالة */
+
+setTimeout(
+()=>{
+
+letter.classList.add(
+"show"
+);
+
+letter.scrollIntoView({
+
+behavior:"smooth",
+
+block:"center"
+
+});
+
+},
+650
+);
+
+}
 
 </script>
 
