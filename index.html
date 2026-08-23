@@ -300,7 +300,7 @@
     <div class="wrap">
         <div class="hero">
             <div class="polaroid left">
-                <img src="images/child.jpg" alt="رودينا صغيرة">
+                <img src="child.jpg" alt="رودينا صغيرة">
                 <div class="pin">💗</div>
             </div>
 
@@ -317,7 +317,7 @@
             </div>
 
             <div class="polaroid right">
-                <img src="images/now.jpg" alt="رودينا دلوقتي">
+                <img src="now.jpg" alt="رودينا دلوقتي">
                 <div class="pin">💗</div>
             </div>
         </div>
@@ -370,10 +370,11 @@
     </div>
 
     <audio id="audio" loop>
-        <source src="audio/song.mp3" type="audio/mpeg">
+        <source src="song.mp3" type="audio/mpeg">
     </audio>
 
     <script>
+        // قلوب
         setInterval(() => {
             const e = document.createElement('div');
             e.className = 'fh';
@@ -385,6 +386,7 @@
             setTimeout(() => e.remove(), 11000);
         }, 480);
 
+        // عد تنازلي
         function tick() {
             const t = new Date('2026-08-24T00:00:00').getTime() - Date.now();
             if (t <= 0) {
@@ -400,6 +402,7 @@
         setInterval(tick, 1000);
         tick();
 
+        // مشغل + تشغيل تلقائي
         let on = false;
         const audio = document.getElementById('audio');
         const btn = document.getElementById('btn');
@@ -411,11 +414,22 @@
                 audio.pause();
                 btn.textContent = '▶';
             } else {
-                audio.play().catch(() => alert('تأكد إن الأغنية موجودة في فولدر audio باسم song.mp3'));
+                audio.play();
                 btn.textContent = '❚❚';
             }
             on = !on;
         }
+
+        // محاولة التشغيل التلقائي
+        window.addEventListener('load', () => {
+            audio.play().then(() => {
+                on = true;
+                btn.textContent = '❚❚';
+            }).catch(() => {
+                // المتصفح منع التشغيل التلقائي، المستخدم لازم يدوس بنفسه
+                console.log('Autoplay blocked');
+            });
+        });
 
         audio.addEventListener('timeupdate', () => {
             if (audio.duration) {
