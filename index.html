@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عيد ميلاد سعيد يا رودينا ❤️</title>
+    <title>لـ رودينا من قلب سامح ❤️</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,9 +20,10 @@
         .bg {
             position: fixed;
             inset: 0;
-            background: radial-gradient(ellipse at 25% 15%, rgba(255,50,110,0.14) 0%, transparent 55%),
-                        radial-gradient(ellipse at 75% 85%, rgba(160,30,90,0.1) 0%, transparent 50%),
-                        #0a0610;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(255,50,110,0.13) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(160,30,90,0.1) 0%, transparent 50%),
+                #0a0610;
             z-index: 0;
         }
 
@@ -34,238 +35,260 @@
             opacity: 0;
         }
         @keyframes rise {
-            0%   { transform: translateY(100vh) scale(0.5); opacity: 0; }
-            15%  { opacity: 0.75; }
-            85%  { opacity: 0.55; }
-            100% { transform: translateY(-80px) scale(1.15); opacity: 0; }
+            0%   { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0; }
+            15%  { opacity: 0.8; }
+            85%  { opacity: 0.5; }
+            100% { transform: translateY(-100px) scale(1.2) rotate(40deg); opacity: 0; }
         }
 
         .wrap {
             position: relative;
             z-index: 10;
-            max-width: 900px;
+            max-width: 880px;
             margin: 0 auto;
-            padding: 35px 18px 50px;
+            padding: 30px 16px 60px;
         }
 
         .hero {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 22px;
-            margin-bottom: 32px;
+            gap: 18px;
+            margin-bottom: 28px;
             flex-wrap: wrap;
         }
 
         .polaroid {
             background: #16101c;
-            padding: 10px 10px 36px;
+            padding: 9px 9px 34px;
             border-radius: 6px;
             box-shadow: 0 12px 35px rgba(0,0,0,0.55);
             position: relative;
-            transition: 0.35s;
+            transition: 0.4s;
         }
-        .polaroid.left  { transform: rotate(-4deg); }
-        .polaroid.right { transform: rotate(4deg); }
-        .polaroid:hover { transform: rotate(0) scale(1.04); }
+        .polaroid.left  { transform: rotate(-3.5deg); }
+        .polaroid.right { transform: rotate(3.5deg); }
+        .polaroid:hover { transform: rotate(0) scale(1.05); }
 
         .polaroid img {
-            width: 170px;
-            height: 210px;
+            width: 155px;
+            height: 195px;
             object-fit: cover;
             display: block;
             border-radius: 3px;
         }
         .polaroid .pin {
             position: absolute;
-            bottom: 8px;
+            bottom: 7px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 20px;
+            font-size: 18px;
             filter: drop-shadow(0 0 8px #ff4d8d);
         }
 
         .center-title {
             text-align: center;
             flex: 1;
-            min-width: 240px;
-            padding: 0 8px;
-        }
-        .center-title h1 {
-            font-weight: 800;
-            line-height: 1.25;
-            margin-bottom: 6px;
+            min-width: 220px;
         }
         .center-title .t1 {
             display: block;
-            font-size: 2.55rem;
+            font-size: 2.3rem;
+            font-weight: 800;
             color: #fff;
             text-shadow: 0 0 22px rgba(255,90,140,0.7);
         }
         .center-title .t2 {
             display: block;
-            font-size: 2.15rem;
-            background: linear-gradient(90deg, #ff4d8d, #ff8fab, #ff4d8d);
+            font-size: 1.95rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff4d8d, #ff8fab);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            filter: drop-shadow(0 0 12px rgba(255,77,141,0.5));
+            margin-top: 4px;
         }
         .center-title .sub {
-            font-size: 0.92rem;
+            font-size: 0.88rem;
             color: #e0a0b8;
-            line-height: 1.75;
-            margin: 14px 0 6px;
-        }
-        .center-title .heart {
-            font-size: 1.35rem;
-            color: #ff4d8d;
-            filter: drop-shadow(0 0 10px #ff4d8d);
+            line-height: 1.7;
+            margin-top: 12px;
         }
 
         .count-box {
-            background: rgba(255,255,255,0.035);
+            background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,90,140,0.22);
             border-radius: 18px;
-            padding: 18px 26px;
-            max-width: 400px;
-            margin: 0 auto 28px;
+            padding: 16px 22px;
+            max-width: 380px;
+            margin: 0 auto 26px;
             text-align: center;
             backdrop-filter: blur(12px);
         }
-        .count-box .lbl {
-            font-size: 0.95rem;
-            color: #ff8fab;
-            margin-bottom: 12px;
-        }
-        .count {
-            display: flex;
-            justify-content: center;
-            gap: 28px;
-        }
-        .count .u { text-align: center; }
+        .count-box .lbl { font-size: 0.9rem; color: #ff8fab; margin-bottom: 10px; }
+        .count { display: flex; justify-content: center; gap: 24px; }
         .count .n {
-            font-size: 2.3rem;
+            font-size: 2.1rem;
             font-weight: 800;
             color: #ff4d8d;
             text-shadow: 0 0 16px rgba(255,77,141,0.55);
-            line-height: 1;
         }
-        .count .t {
-            font-size: 0.8rem;
-            color: #c07090;
-            margin-top: 3px;
-        }
+        .count .t { font-size: 0.78rem; color: #c07090; margin-top: 2px; }
 
         .wish {
             text-align: center;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #ffb6c1;
-            margin: 22px 0 30px;
+            margin: 18px 0 30px;
             font-weight: 600;
         }
 
-        .msg {
-            background: rgba(255,255,255,0.035);
-            border: 1px solid rgba(255,90,140,0.18);
-            border-radius: 22px;
-            padding: 28px 26px 26px;
-            margin-bottom: 30px;
-            position: relative;
-            backdrop-filter: blur(12px);
+        .envelope-section {
+            text-align: center;
+            margin: 10px 0 40px;
         }
-        .msg .balloon {
-            position: absolute;
-            top: 18px;
-            right: 22px;
-            font-size: 2.6rem;
-            filter: drop-shadow(0 0 12px #ff4d8d);
-            opacity: 0.9;
-        }
-        .msg h3 {
-            font-size: 1.25rem;
+
+        .envelope-hint {
+            font-size: 1rem;
             color: #ff8fab;
+            margin-bottom: 18px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .envelope {
+            width: 280px;
+            height: 180px;
+            margin: 0 auto;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.4s;
+        }
+        .envelope:hover { transform: scale(1.05); }
+
+        .envelope .back {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(145deg, #ff4d8d, #c41e5a);
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(255,77,141,0.35);
+        }
+
+        .envelope .flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            background: linear-gradient(145deg, #ff6b9d, #ff4d8d);
+            clip-path: polygon(0 0, 50% 70%, 100% 0);
+            transform-origin: top;
+            transition: transform 0.7s ease;
+            z-index: 3;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .envelope.open .flap {
+            transform: rotateX(180deg);
+        }
+
+        .envelope .front {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 110px;
+            background: linear-gradient(145deg, #e03a6f, #b01a50);
+            border-radius: 0 0 8px 8px;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .envelope .heart-seal {
+            font-size: 2.4rem;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
+            transition: 0.4s;
+        }
+        .envelope.open .heart-seal { opacity: 0; }
+
+        .letter-content {
+            display: none;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,120,160,0.25);
+            border-radius: 20px;
+            padding: 28px 24px;
+            margin: 20px auto 30px;
+            max-width: 620px;
+            backdrop-filter: blur(12px);
+            animation: fadeIn 1s ease;
+        }
+        .letter-content.show { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .letter-content h3 {
+            text-align: center;
+            color: #ff8fab;
+            font-size: 1.3rem;
+            margin-bottom: 18px;
+        }
+        .letter-content p {
+            font-size: 1.08rem;
+            line-height: 2;
+            color: #f5dce4;
             margin-bottom: 16px;
+            text-align: right;
         }
-        .msg p {
-            font-size: 1.05rem;
-            line-height: 1.95;
-            color: #f0d0da;
-            margin-bottom: 12px;
-        }
-        .msg .end {
-            margin-top: 16px;
+        .letter-content .sign {
+            text-align: left;
+            font-size: 1.3rem;
             font-weight: 700;
-            color: #ff6b9d;
-            font-size: 1.12rem;
+            color: #ffd700;
+            margin-top: 22px;
         }
 
         .player {
             background: rgba(255,255,255,0.045);
             border: 1px solid rgba(255,90,140,0.2);
             border-radius: 18px;
-            padding: 16px 20px;
+            padding: 14px 18px;
             display: flex;
             align-items: center;
-            gap: 14px;
-            margin-bottom: 35px;
+            gap: 12px;
+            margin: 0 auto 30px;
+            max-width: 480px;
             backdrop-filter: blur(10px);
         }
         .player .cover {
-            width: 54px;
-            height: 54px;
+            width: 48px;
+            height: 48px;
             border-radius: 10px;
             background: linear-gradient(135deg, #ff4d8d, #b01a50);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(255,77,141,0.35);
         }
         .player .meta { flex: 1; min-width: 0; }
-        .player .song {
-            font-weight: 700;
-            font-size: 1rem;
-            color: #fff;
-        }
-        .player .artist {
-            font-size: 0.82rem;
-            color: #c07090;
-            margin-top: 2px;
-        }
-        .player .bar-wrap {
-            flex: 1.2;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            min-width: 0;
-        }
-        .player .bar {
-            flex: 1;
-            height: 4px;
-            background: rgba(255,255,255,0.12);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        .player .bar-fill {
-            height: 100%;
-            width: 0%;
-            background: linear-gradient(90deg, #ff4d8d, #ff8fab);
-            border-radius: 4px;
-        }
-        .player .time {
-            font-size: 0.75rem;
-            color: #c07090;
-        }
+        .player .song { font-weight: 700; font-size: 0.95rem; }
+        .player .artist { font-size: 0.78rem; color: #c07090; }
         .play-btn {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             border: none;
             background: linear-gradient(135deg, #ff4d8d, #c41e5a);
             color: #fff;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -273,24 +296,22 @@
             box-shadow: 0 5px 18px rgba(255,77,141,0.4);
             flex-shrink: 0;
         }
-        .play-btn:hover { transform: scale(1.08); }
 
         .footer {
             text-align: center;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             color: #c07090;
+            margin-top: 10px;
         }
         .footer span { color: #ff6b9d; }
 
-        @media (max-width: 680px) {
-            .hero { flex-direction: column; gap: 22px; }
+        @media (max-width: 640px) {
+            .hero { flex-direction: column; gap: 18px; }
             .polaroid.left, .polaroid.right { transform: none !important; }
-            .polaroid img { width: 155px; height: 190px; }
-            .center-title .t1 { font-size: 2.05rem; }
-            .center-title .t2 { font-size: 1.75rem; }
-            .count .n { font-size: 1.85rem; }
-            .player { flex-wrap: wrap; }
-            .player .bar-wrap { width: 100%; order: 3; margin-top: 8px; }
+            .polaroid img { width: 145px; height: 180px; }
+            .center-title .t1 { font-size: 1.9rem; }
+            .center-title .t2 { font-size: 1.6rem; }
+            .envelope { width: 240px; height: 155px; }
         }
     </style>
 </head>
@@ -305,15 +326,12 @@
             </div>
 
             <div class="center-title">
-                <h1>
-                    <span class="t1">عيد ميلاد سعيد</span>
-                    <span class="t2">♥ للأجمل قلب</span>
-                </h1>
+                <span class="t1">عيد ميلاد سعيد</span>
+                <span class="t2">♥ للأجمل قلب</span>
                 <div class="sub">
                     اليوم مش زي أي يوم...<br>
-                    اليوم هو يوم ميلادك، اليوم اللي جبتي فيه النور لحياتي.
+                    اليوم اللي النور دخل فيه حياتي
                 </div>
-                <div class="heart">♥</div>
             </div>
 
             <div class="polaroid right">
@@ -325,30 +343,55 @@
         <div class="count-box">
             <div class="lbl">العد التنازلي لعيد ميلادك 🎂</div>
             <div class="count">
-                <div class="u">
+                <div>
                     <div class="n" id="h">00</div>
                     <div class="t">ساعات</div>
                 </div>
-                <div class="u">
+                <div>
                     <div class="n" id="m">00</div>
                     <div class="t">دقائق</div>
                 </div>
-                <div class="u">
+                <div>
                     <div class="n" id="s">00</div>
                     <div class="t">ثواني</div>
                 </div>
             </div>
         </div>
 
-        <div class="wish">✨ كل سنة وإنتي طيبة ✨</div>
+        <div class="wish">✨ كل سنة وإنتي أجمل ✨</div>
 
-        <div class="msg">
-            <div class="balloon">🎈</div>
-            <h3>رسالة ليكي ♥</h3>
-            <p>مش عارف منين أبدأ، بس عارف إنك حاجة جميلة حصلت في حياتي.</p>
-            <p>وجودك بيخلي كل يوم له معنى، وابتسامتك بتنور أي مكان تروحيه.</p>
-            <p>أتمنى من كل قلبي إن سنة جديدة تبدأ عليكي تكون مليانة فرح، نجاح، صحة، وحاجات حلوة كتير تفوق خيالك.</p>
-            <p class="end">أنا هنا دايمًا.. بحبك جدًا ♥</p>
+        <div class="envelope-section">
+            <div class="envelope-hint">اضغطي على الظرف عشان تفتحي الرسالة 💌</div>
+            
+            <div class="envelope" id="envelope" onclick="openEnvelope()">
+                <div class="back"></div>
+                <div class="flap"></div>
+                <div class="front">
+                    <div class="heart-seal">❤️</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-content" id="letterContent">
+            <h3>رسالة من قلبي ليكي ❤️</h3>
+            
+            <p>يا رودينا،</p>
+            
+            <p>مش عارف أكتبلك إزاي وأنا قلبي مليان أوي. كل مرة بفكر فيكِ بحس إن الكلام مش كفاية، وإن مفيش حروف تقدر توصف قد إيه إنتي غالية.</p>
+            
+            <p>من أول ما شوفتك وأنتِ صغيرة، لحد ما كبرتي وبقيتي البنت اللي بتخلي الدنيا أحلى… كنتِ دايمًا موجودة في قلبي حتى قبل ما أعرف إن القلب ده هيبقى ملككِ.</p>
+            
+            <p>وجودكِ معايا مش حاجة عادية. وجودكِ هو السبب اللي بيخليني أصحى كل يوم وأنا مبسوط، وهو السبب اللي بيخليني أحلم بكرة، وهو السبب اللي بيخليني أشكر ربنا كل ليلة.</p>
+            
+            <p>النهارده عيد ميلادك، وأنا مش جايب هدايا تتفتح وتخلص. أنا جايبلك حاجة أثمن: كل الحب اللي جوايا، وكل الذكريات الحلوة، وكل الدعوات اللي بدعيهالك وأنا نايم وأنا صاحي.</p>
+            
+            <p>عايزك تعرفي إنك مش بس حبيبتي… إنتي بيتي، وإنتي ضحكتي، وإنتي الأمان اللي بدور عليه. وإن شاء الله أفضل جنبك في كل عيد ميلاد، وفي كل يوم عادي، وفي كل لحظة فرح أو تعب.</p>
+            
+            <p>بحبك يا رودينا. بحبك حب كبير أوي، حب مش بيعرف يوصف نفسه، حب بيكبر كل يوم أكتر من اللي قبله.</p>
+            
+            <p>كل سنة وإنتي طيبة، وكل سنة وإنتي أغلى حاجة في حياتي.</p>
+            
+            <div class="sign">سامح ❤️</div>
         </div>
 
         <div class="player">
@@ -357,15 +400,11 @@
                 <div class="song">أغنية ليكي</div>
                 <div class="artist">من قلب سامح</div>
             </div>
-            <div class="bar-wrap">
-                <div class="bar"><div class="bar-fill" id="bar"></div></div>
-                <div class="time" id="time">0:00</div>
-            </div>
             <button class="play-btn" id="btn" onclick="toggle()">▶</button>
         </div>
 
         <div class="footer">
-            شكرًا لأنك موجودة في حياتي <span>♥</span>
+            اتعملت بحب كبير مخصوص ليكي <span>♥</span>
         </div>
     </div>
 
@@ -374,19 +413,17 @@
     </audio>
 
     <script>
-        // قلوب
         setInterval(() => {
             const e = document.createElement('div');
             e.className = 'fh';
-            e.textContent = ['💗','💕','💓','💖','❤️'][Math.random()*5|0];
+            e.textContent = ['💗','💕','💓','💖','❤️','✨'][Math.random()*6|0];
             e.style.left = Math.random()*100 + 'vw';
-            e.style.fontSize = (13 + Math.random()*16) + 'px';
-            e.style.animationDuration = (5.5 + Math.random()*5) + 's';
+            e.style.fontSize = (14 + Math.random()*18) + 'px';
+            e.style.animationDuration = (5 + Math.random()*6) + 's';
             document.body.appendChild(e);
-            setTimeout(() => e.remove(), 11000);
-        }, 480);
+            setTimeout(() => e.remove(), 12000);
+        }, 400);
 
-        // عد تنازلي
         function tick() {
             const t = new Date('2026-08-24T00:00:00').getTime() - Date.now();
             if (t <= 0) {
@@ -402,12 +439,33 @@
         setInterval(tick, 1000);
         tick();
 
-        // مشغل + تشغيل تلقائي
+        function openEnvelope() {
+            const env = document.getElementById('envelope');
+            const letter = document.getElementById('letterContent');
+            
+            if (!env.classList.contains('open')) {
+                env.classList.add('open');
+                setTimeout(() => {
+                    letter.classList.add('show');
+                    for (let i = 0; i < 30; i++) {
+                        setTimeout(() => {
+                            const e = document.createElement('div');
+                            e.className = 'fh';
+                            e.textContent = ['💗','💕','💓','💖','❤️'][Math.random()*5|0];
+                            e.style.left = Math.random()*100 + 'vw';
+                            e.style.fontSize = (16 + Math.random()*22) + 'px';
+                            e.style.animationDuration = (4 + Math.random()*4) + 's';
+                            document.body.appendChild(e);
+                            setTimeout(() => e.remove(), 9000);
+                        }, i * 70);
+                    }
+                }, 500);
+            }
+        }
+
         let on = false;
         const audio = document.getElementById('audio');
         const btn = document.getElementById('btn');
-        const bar = document.getElementById('bar');
-        const time = document.getElementById('time');
 
         function toggle() {
             if (on) {
@@ -420,24 +478,11 @@
             on = !on;
         }
 
-        // محاولة التشغيل التلقائي
         window.addEventListener('load', () => {
             audio.play().then(() => {
                 on = true;
                 btn.textContent = '❚❚';
-            }).catch(() => {
-                // المتصفح منع التشغيل التلقائي، المستخدم لازم يدوس بنفسه
-                console.log('Autoplay blocked');
-            });
-        });
-
-        audio.addEventListener('timeupdate', () => {
-            if (audio.duration) {
-                bar.style.width = (audio.currentTime / audio.duration * 100) + '%';
-                const m = Math.floor(audio.currentTime / 60);
-                const s = Math.floor(audio.currentTime % 60);
-                time.textContent = m + ':' + String(s).padStart(2,'0');
-            }
+            }).catch(() => {});
         });
     </script>
 </body>
