@@ -3,277 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عيد ميلاد سعيد يا رودينا ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <title>كل سنة وانتي طيبة يا رودينا ❤️</title>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #1a0a1f 0%, #2d1b3d 40%, #1a0a1f 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        /* خلفية النجوم */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
 
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+        .star {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 3s infinite ease-in-out;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* القلوب الطايرة */
+        .heart {
+            position: fixed;
+            font-size: 20px;
+            color: #ff6b9d;
+            animation: floatHeart 6s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* الهيدر */
+        .header {
+            margin-bottom: 50px;
+            animation: fadeInDown 1.2s ease;
+        }
+
+        .header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ff6b9d, #ffd700, #ff6b9d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+            text-shadow: 0 0 30px rgba(255, 107, 157, 0.3);
+        }
+
+        .header .subtitle {
+            font-size: 1.4rem;
+            color: #ffb6c1;
+            font-weight: 400;
+        }
+
+        .header .from {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #ffd700;
+        }
+
+        /* الرسالة */
+        .message-box {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 182, 193, 0.2);
+            border-radius: 24px;
+            padding: 40px 35px;
+            margin: 40px 0;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.4s ease;
+            line-height: 1.9;
+            font-size: 1.15rem;
+            text-align: right;
+        }
+
+        .message-box p {
+            margin-bottom: 18px;
+            color: #f8e1e7;
+        }
+
+        .message-box .signature {
+            margin-top: 30px;
+            text-align: left;
+            font-weight: 700;
+            color: #ffd700;
+            font-size: 1.3rem;
+        }
+
+        /* قسم الصور */
+        .photos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 50px 0;
+            animation: fadeInUp 1.6s ease;
+        }
+
+        .photo-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 182, 193, 0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 40px rgba(255, 107, 157, 0.25);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .photo-card .caption {
+            padding: 18px;
+            font-size: 1.1rem;
+            color: #ffb6c1;
+            font-weight: 600;
+        }
+
+        /* زر التشغيل */
+        .play-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.25rem;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            border-radius: 50px;
+            cursor: pointer;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4); }
+            50% { box-shadow: 0 10px 40px rgba(255, 107, 157, 0.7); }
+        }
+
+        /* مشغل الصوت */
+        audio {
+            display: none;
+        }
+
+        /* تذييل */
+        .footer {
+            margin-top: 60px;
+            font-size: 0.95rem;
+            color: #c9a0a8;
+            animation: fadeIn 2s ease;
+        }
+
+        /* أنيميشنز عامة */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* موبايل */
+        @media (max-width: 700px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            .photos {
+                grid-template-columns: 1fr;
+            }
+            .photo-card img {
+                height: 280px;
+            }
+            .message-box {
+                padding: 30px 22px;
+                font-size: 1.05rem;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-    <div class="background"></div>
-    <div id="hearts"></div>
-
-    <main>
-
-        <!-- الصور -->
-        <section class="photos">
-
-            <div class="photo-card left-card">
-                <div class="photo-label">رودينا زمان 🥹❤️</div>
-
-                <img src="young.jpg" alt="رودينا وهي صغيرة">
-
-                <div class="heart">♡</div>
-            </div>
-
-
-            <div class="photo-card right-card">
-                <div class="photo-label">ورودينا دلوقتي ❤️</div>
-
-                <img src="now.jpg" alt="رودينا دلوقتي">
-
-                <div class="heart">♡</div>
-            </div>
-
-        </section>
-
-
-        <!-- البداية -->
-        <section class="hero">
-
-            <div class="small-hearts">
-                ♡ ♡ ♡
-            </div>
-
-            <h1 id="mainTitle">
-                كل سنة وانتي طيبة
-                <span id="girlName">يا رودينا ❤️</span>
-            </h1>
-
-            <p class="subtitle">
-                مش هقولك كلام محفوظ ولا كلام بيتقال في كل عيد ميلاد...
-                <br>
-                أنا بس عايز أقولك اللي جوايا ❤️
-            </p>
-
-        </section>
-
-
-        <!-- العد التنازلي -->
-        <section class="countdown-box">
-
-            <h2>🎂 فاضل على عيد ميلاد رودينا</h2>
-
-            <div class="countdown">
-
-                <div class="time-box">
-                    <span id="days">00</span>
-                    <small>يوم</small>
-                </div>
-
-                <div class="separator">:</div>
-
-                <div class="time-box">
-                    <span id="hours">00</span>
-                    <small>ساعة</small>
-                </div>
-
-                <div class="separator">:</div>
-
-                <div class="time-box">
-                    <span id="minutes">00</span>
-                    <small>دقيقة</small>
-                </div>
-
-                <div class="separator">:</div>
-
-                <div class="time-box">
-                    <span id="seconds">00</span>
-                    <small>ثانية</small>
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- الرسالة -->
-        <section class="message-card">
-
-            <div class="balloons">
-                🎈 💕 🎈
-            </div>
-
-            <h2>رودينا ❤️</h2>
-
-            <p id="message">
-
-                بصراحة أنا مش عارف أكتب الكلام ده إزاي،
-                ومش عايز أكتب كلام كبير وخلاص عشان عيد ميلادك.
-
-                <br><br>
-
-                بس اللي أعرفه إنك من الناس اللي وجودهم في حياة أي حد
-                بيفرق، حتى لو إنتي مش واخدة بالك من ده.
-
-                <br><br>
-
-                يمكن مش دايمًا بعرف أقول اللي جوايا،
-                وممكن ساعات أهزر وأرمي كلام وخلاص 😂،
-                بس ده مش معناه إن وجودك عادي بالنسبالي.
-
-                <br><br>
-
-                النهارده يوم مهم عشان ببساطة...
-                ده اليوم اللي رودينا اتولدت فيه ❤️
-
-                <br><br>
-
-                فأتمنى السنة دي تكون أحسن من أي سنة فاتت،
-                وتحققي فيها حاجات كتير نفسك فيها،
-                وتفضلي تضحكي وتبقي مبسوطة،
-                ومهما حصل متخليش أي حاجة تضايقك أو تقلل من فرحتك.
-
-                <br><br>
-
-                وأنا بجد بتمنى أشوفك دايمًا مبسوطة،
-                وأشوف كل حاجة نفسك فيها بتتحقق قدام عينك.
-
-                <br><br>
-
-                كل سنة وانتي طيبة يا رودينا،
-                وكل سنة وانتي بخير،
-                وعقبال سنين كتير وإنتي لسه بنفس الضحكة
-                ونفس الروح الحلوة دي. ❤️
-
-                <br><br>
-
-                وأهو بدل ما أفضل أقول كلام كتير...
-                عيد ميلاد سعيد يا رودينا،
-                وإن شاء الله اليوم ده يفضل ذكرى حلوة عندك. ❤️
-
-            </p>
-
-
-            <div class="signature">
-
-                بحبك ❤️
-
-                <br>
-
-                <span>
-                    من:
-                    <b id="myName">اكتب اسمك هنا</b>
-                </span>
-
-            </div>
-
-        </section>
-
-
-        <!-- الأغنية -->
-        <section class="music-card">
-
-            <div class="music-info">
-
-                <div class="music-icon">
-                    🎵
-                </div>
-
-                <div>
-                    <h3>الأغنية دي ليكي ❤️</h3>
-
-                    <p>
-                        اسمعيها للآخر بقى 😂❤️
-                    </p>
-                </div>
-
-            </div>
-
-
-            <audio id="song" controls>
-
-                <source src="song.mp3" type="audio/mpeg">
-
-                المتصفح لا يدعم تشغيل الصوت.
-
-            </audio>
-
-        </section>
-
-
-        <!-- الزر -->
-        <button id="loveButton" onclick="showLove()">
-
-            دوسي هنا يا رودينا ❤️
-
-        </button>
-
-
-        <p class="footer">
-
-            عملتلك الموقع ده مخصوص عشان عيد ميلادك ❤️
-
-            <br>
-
-            ومحدش يقولي عملته ليه 😂
-
-        </p>
-
-    </main>
-
-
-    <!-- شاشة الاحتفال -->
-    <div id="birthdayScreen">
-
-        <div class="birthday-content">
-
-            <div class="big-heart">
-                ❤️
-            </div>
-
-
-            <h1>
-                كل سنة وانتي طيبة يا رودينا 🎂
-            </h1>
-
-
-            <h2 id="birthdayGirlName">
-                يا أحلى رودينا ❤️
-            </h2>
-
-
-            <p>
-
-                النهارده مش يوم عادي...
-
-                <br>
-
-                النهارده اليوم اللي الدنيا كسبت فيه رودينا ❤️
-
-                <br><br>
-
-                فكل سنة وانتي طيبة،
-                وإن شاء الله السنة دي تبقى أحلى سنة ليكي.
-
-            </p>
-
-
-            <button onclick="closeBirthday()">
-
-                افتحي رسالتي 💌
-
-            </button>
-
+    <!-- النجوم -->
+    <div class="stars" id="stars"></div>
+
+    <div class="container">
+        <!-- الهيدر -->
+        <div class="header">
+            <h1>عيد ميلاد سعيد يا رودينا</h1>
+            <div class="subtitle">كل سنة وإنتي أجمل حاجة في حياتي</div>
+            <div class="from">من قلب سامح ❤️</div>
         </div>
 
+        <!-- زر التشغيل -->
+        <button class="play-btn" id="playBtn" onclick="startCelebration()">
+            🎵 اضغط هنا عشان تبدأ الأغنية والاحتفال
+        </button>
+
+        <!-- الرسالة -->
+        <div class="message-box">
+            <p>يا رودينا،</p>
+            <p>بكره عيد ميلادك، وأنا قاعد بفكر إزاي أقدر أوصفلك قد إيه إنتي غالية عليا.</p>
+            <p>من أول ما شوفت صورتك وأنتِ صغيرة، لحد ما كبرتي وبقيتي البنت اللي بتخليني أبتسم من غير سبب... قلبي كان بيكبر معاكِ.</p>
+            <p>كل صورة ليكي بتحكيني حكاية، وكل لحظة معاكِ بتخليني أشكر ربنا إنك في حياتي.</p>
+            <p>عايزك تعرفي إن وجودك معايا هو أجمل هدية أخدتها في عمري. ومهما عدت السنين، هفضل أحبك أكتر وأكتر.</p>
+            <p>عيد ميلاد سعيد يا أجمل جزء في يومي، وإن شاء الله كل أيامك تكون فرح وضحكة وسعادة زي ما بتفرحي قلبي كل يوم.</p>
+            <p>بحبك أوي أوي يا رودينا...</p>
+            <div class="signature">سامح ❤️</div>
+        </div>
+
+        <!-- الصور -->
+        <div class="photos">
+            <div class="photo-card">
+                <img src="images/child.jpg" alt="رودينا وهي صغيرة">
+                <div class="caption">وأنتي صغيرة 🥹</div>
+            </div>
+            <div class="photo-card">
+                <img src="images/now.jpg" alt="رودينا دلوقتي">
+                <div class="caption">ودلوقتي... أجمل بنت في الدنيا ✨</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            صُنع بحب من سامح خصيصًا لرودينا<br>
+            24 أغسطس 2026
+        </div>
     </div>
 
+    <!-- الأغنية -->
+    <audio id="birthdaySong" loop>
+        <source src="audio/song.mp3" type="audio/mpeg">
+    </audio>
 
-    <script src="script.js"></script>
+    <script>
+        // إنشاء النجوم
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 80; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 1;
+                star.style.width = size + 'px';
+                star.style.height = size + 'px';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
 
+        // قلوب طايرة
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+            heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 8000);
+        }
+
+        // بدء الاحتفال
+        function startCelebration() {
+            const song = document.getElementById('birthdaySong');
+            const btn = document.getElementById('playBtn');
+
+            song.play().then(() => {
+                btn.innerHTML = '🎶 الأغنية شغالة... استمتعي يا رودينا';
+                btn.style.background = 'linear-gradient(135deg, #c44569, #6b2d4b)';
+            }).catch(err => {
+                alert('حصل مشكلة في تشغيل الأغنية. تأكد إن الملف موجود في مجلد audio باسم song.mp3');
+            });
+
+            // قلوب مستمرة
+            setInterval(createHeart, 600);
+        }
+
+        // تشغيل عند التحميل
+        createStars();
+        // بعض القلوب من الأول
+        setInterval(createHeart, 1200);
+    </script>
 </body>
 </html>
