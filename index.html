@@ -4,347 +4,427 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>عيد ميلاد سعيد يا رودينا ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Cairo', sans-serif;
-            background: linear-gradient(135deg, #1a0a1f 0%, #2d1b3d 40%, #1a0a1f 100%);
+            background: #0a0610;
             color: #fff;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
         }
 
-        /* خلفية النجوم */
-        .stars {
+        .bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
+            inset: 0;
+            background: radial-gradient(ellipse at 25% 15%, rgba(255,50,110,0.14) 0%, transparent 55%),
+                        radial-gradient(ellipse at 75% 85%, rgba(160,30,90,0.1) 0%, transparent 50%),
+                        #0a0610;
             z-index: 0;
         }
 
-        .star {
-            position: absolute;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle 3s infinite ease-in-out;
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        /* القلوب الطايرة */
-        .heart {
+        .fh {
             position: fixed;
-            font-size: 20px;
-            color: #ff6b9d;
-            animation: floatHeart 6s linear infinite;
             pointer-events: none;
             z-index: 1;
-            opacity: 0.7;
+            animation: rise linear forwards;
+            opacity: 0;
+        }
+        @keyframes rise {
+            0%   { transform: translateY(100vh) scale(0.5); opacity: 0; }
+            15%  { opacity: 0.75; }
+            85%  { opacity: 0.55; }
+            100% { transform: translateY(-80px) scale(1.15); opacity: 0; }
         }
 
-        @keyframes floatHeart {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.7; }
-            90% { opacity: 0.7; }
-            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
-        }
-
-        .container {
+        .wrap {
             position: relative;
             z-index: 10;
             max-width: 900px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 35px 18px 50px;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+
+        .polaroid {
+            background: #16101c;
+            padding: 10px 10px 36px;
+            border-radius: 6px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.55);
+            position: relative;
+            transition: 0.35s;
+        }
+        .polaroid.left  { transform: rotate(-4deg); }
+        .polaroid.right { transform: rotate(4deg); }
+        .polaroid:hover { transform: rotate(0) scale(1.04); }
+
+        .polaroid img {
+            width: 170px;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+            border-radius: 3px;
+        }
+        .polaroid .pin {
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            filter: drop-shadow(0 0 8px #ff4d8d);
+        }
+
+        .center-title {
             text-align: center;
+            flex: 1;
+            min-width: 240px;
+            padding: 0 8px;
         }
-
-        /* الهيدر */
-        .header {
-            margin-bottom: 50px;
-            animation: fadeInDown 1.2s ease;
-        }
-
-        .header h1 {
-            font-size: 3.2rem;
+        .center-title h1 {
             font-weight: 800;
-            background: linear-gradient(90deg, #ff6b9d, #ffd700, #ff6b9d);
+            line-height: 1.25;
+            margin-bottom: 6px;
+        }
+        .center-title .t1 {
+            display: block;
+            font-size: 2.55rem;
+            color: #fff;
+            text-shadow: 0 0 22px rgba(255,90,140,0.7);
+        }
+        .center-title .t2 {
+            display: block;
+            font-size: 2.15rem;
+            background: linear-gradient(90deg, #ff4d8d, #ff8fab, #ff4d8d);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 10px;
-            text-shadow: 0 0 30px rgba(255, 107, 157, 0.3);
+            filter: drop-shadow(0 0 12px rgba(255,77,141,0.5));
+        }
+        .center-title .sub {
+            font-size: 0.92rem;
+            color: #e0a0b8;
+            line-height: 1.75;
+            margin: 14px 0 6px;
+        }
+        .center-title .heart {
+            font-size: 1.35rem;
+            color: #ff4d8d;
+            filter: drop-shadow(0 0 10px #ff4d8d);
         }
 
-        .header .subtitle {
-            font-size: 1.4rem;
-            color: #ffb6c1;
-            font-weight: 400;
-        }
-
-        .header .from {
-            margin-top: 15px;
-            font-size: 1.1rem;
-            color: #ffd700;
-        }
-
-        /* الرسالة */
-        .message-box {
-            background: rgba(255, 255, 255, 0.06);
+        .count-box {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,90,140,0.22);
+            border-radius: 18px;
+            padding: 18px 26px;
+            max-width: 400px;
+            margin: 0 auto 28px;
+            text-align: center;
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 182, 193, 0.2);
-            border-radius: 24px;
-            padding: 40px 35px;
-            margin: 40px 0;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1.4s ease;
-            line-height: 1.9;
-            font-size: 1.15rem;
-            text-align: right;
+        }
+        .count-box .lbl {
+            font-size: 0.95rem;
+            color: #ff8fab;
+            margin-bottom: 12px;
+        }
+        .count {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+        }
+        .count .u { text-align: center; }
+        .count .n {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: #ff4d8d;
+            text-shadow: 0 0 16px rgba(255,77,141,0.55);
+            line-height: 1;
+        }
+        .count .t {
+            font-size: 0.8rem;
+            color: #c07090;
+            margin-top: 3px;
         }
 
-        .message-box p {
-            margin-bottom: 18px;
-            color: #f8e1e7;
-        }
-
-        .message-box .signature {
-            margin-top: 30px;
-            text-align: left;
-            font-weight: 700;
-            color: #ffd700;
-            font-size: 1.3rem;
-        }
-
-        /* قسم الصور */
-        .photos {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin: 50px 0;
-            animation: fadeInUp 1.6s ease;
-        }
-
-        .photo-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid rgba(255, 182, 193, 0.15);
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        .photo-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 40px rgba(255, 107, 157, 0.25);
-        }
-
-        .photo-card img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .photo-card .caption {
-            padding: 18px;
-            font-size: 1.1rem;
+        .wish {
+            text-align: center;
+            font-size: 1.2rem;
             color: #ffb6c1;
+            margin: 22px 0 30px;
             font-weight: 600;
         }
 
-        /* زر التشغيل */
-        .play-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #ff6b9d, #c44569);
-            color: white;
-            border: none;
-            padding: 18px 40px;
+        .msg {
+            background: rgba(255,255,255,0.035);
+            border: 1px solid rgba(255,90,140,0.18);
+            border-radius: 22px;
+            padding: 28px 26px 26px;
+            margin-bottom: 30px;
+            position: relative;
+            backdrop-filter: blur(12px);
+        }
+        .msg .balloon {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            font-size: 2.6rem;
+            filter: drop-shadow(0 0 12px #ff4d8d);
+            opacity: 0.9;
+        }
+        .msg h3 {
             font-size: 1.25rem;
-            font-family: 'Cairo', sans-serif;
+            color: #ff8fab;
+            margin-bottom: 16px;
+        }
+        .msg p {
+            font-size: 1.05rem;
+            line-height: 1.95;
+            color: #f0d0da;
+            margin-bottom: 12px;
+        }
+        .msg .end {
+            margin-top: 16px;
             font-weight: 700;
-            border-radius: 50px;
+            color: #ff6b9d;
+            font-size: 1.12rem;
+        }
+
+        .player {
+            background: rgba(255,255,255,0.045);
+            border: 1px solid rgba(255,90,140,0.2);
+            border-radius: 18px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 35px;
+            backdrop-filter: blur(10px);
+        }
+        .player .cover {
+            width: 54px;
+            height: 54px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #ff4d8d, #b01a50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            box-shadow: 0 4px 15px rgba(255,77,141,0.35);
+        }
+        .player .meta { flex: 1; min-width: 0; }
+        .player .song {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #fff;
+        }
+        .player .artist {
+            font-size: 0.82rem;
+            color: #c07090;
+            margin-top: 2px;
+        }
+        .player .bar-wrap {
+            flex: 1.2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 0;
+        }
+        .player .bar {
+            flex: 1;
+            height: 4px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .player .bar-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #ff4d8d, #ff8fab);
+            border-radius: 4px;
+        }
+        .player .time {
+            font-size: 0.75rem;
+            color: #c07090;
+        }
+        .play-btn {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #ff4d8d, #c41e5a);
+            color: #fff;
+            font-size: 1.1rem;
             cursor: pointer;
-            margin: 30px 0;
-            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
-            transition: all 0.3s ease;
-            animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 18px rgba(255,77,141,0.4);
+            flex-shrink: 0;
         }
+        .play-btn:hover { transform: scale(1.08); }
 
-        .play-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 15px 40px rgba(255, 107, 157, 0.6);
-        }
-
-        @keyframes pulse {
-            0%, 100% { box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4); }
-            50% { box-shadow: 0 10px 40px rgba(255, 107, 157, 0.7); }
-        }
-
-        /* مشغل الصوت */
-        audio {
-            display: none;
-        }
-
-        /* تذييل */
         .footer {
-            margin-top: 60px;
-            font-size: 0.95rem;
-            color: #c9a0a8;
-            animation: fadeIn 2s ease;
+            text-align: center;
+            font-size: 0.98rem;
+            color: #c07090;
         }
+        .footer span { color: #ff6b9d; }
 
-        /* أنيميشنز عامة */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        /* موبايل */
-        @media (max-width: 700px) {
-            .header h1 {
-                font-size: 2.2rem;
-            }
-            .photos {
-                grid-template-columns: 1fr;
-            }
-            .photo-card img {
-                height: 280px;
-            }
-            .message-box {
-                padding: 30px 22px;
-                font-size: 1.05rem;
-            }
+        @media (max-width: 680px) {
+            .hero { flex-direction: column; gap: 22px; }
+            .polaroid.left, .polaroid.right { transform: none !important; }
+            .polaroid img { width: 155px; height: 190px; }
+            .center-title .t1 { font-size: 2.05rem; }
+            .center-title .t2 { font-size: 1.75rem; }
+            .count .n { font-size: 1.85rem; }
+            .player { flex-wrap: wrap; }
+            .player .bar-wrap { width: 100%; order: 3; margin-top: 8px; }
         }
     </style>
 </head>
 <body>
-    <!-- النجوم -->
-    <div class="stars" id="stars"></div>
+    <div class="bg"></div>
 
-    <div class="container">
-        <!-- الهيدر -->
-        <div class="header">
-            <h1>عيد ميلاد سعيد يا رودينا</h1>
-            <div class="subtitle">كل سنة وإنتي أجمل حاجة في حياتي</div>
-            <div class="from">من قلب سامح ❤️</div>
-        </div>
-
-        <!-- زر التشغيل -->
-        <button class="play-btn" id="playBtn" onclick="startCelebration()">
-            🎵 اضغط هنا عشان تبدأ الأغنية والاحتفال
-        </button>
-
-        <!-- الرسالة -->
-        <div class="message-box">
-            <p>يا رودينا،</p>
-            <p>بكره عيد ميلادك، وأنا قاعد بفكر إزاي أقدر أوصفلك قد إيه إنتي غالية عليا.</p>
-            <p>من أول ما شوفت صورتك وأنتِ صغيرة، لحد ما كبرتي وبقيتي البنت اللي بتخليني أبتسم من غير سبب... قلبي كان بيكبر معاكِ.</p>
-            <p>كل صورة ليكي بتحكيني حكاية، وكل لحظة معاكِ بتخليني أشكر ربنا إنك في حياتي.</p>
-            <p>عايزك تعرفي إن وجودك معايا هو أجمل هدية أخدتها في عمري. ومهما عدت السنين، هفضل أحبك أكتر وأكتر.</p>
-            <p>عيد ميلاد سعيد يا أجمل جزء في يومي، وإن شاء الله كل أيامك تكون فرح وضحكة وسعادة زي ما بتفرحي قلبي كل يوم.</p>
-            <p>بحبك أوي أوي يا رودينا...</p>
-            <div class="signature">سامح ❤️</div>
-        </div>
-
-        <!-- الصور -->
-        <div class="photos">
-            <div class="photo-card">
-                <img src="images/child.jpg" alt="رودينا وهي صغيرة">
-                <div class="caption">وأنتي صغيرة 🥹</div>
+    <div class="wrap">
+        <div class="hero">
+            <div class="polaroid left">
+                <img src="images/child.jpg" alt="رودينا صغيرة">
+                <div class="pin">💗</div>
             </div>
-            <div class="photo-card">
+
+            <div class="center-title">
+                <h1>
+                    <span class="t1">عيد ميلاد سعيد</span>
+                    <span class="t2">♥ للأجمل قلب</span>
+                </h1>
+                <div class="sub">
+                    اليوم مش زي أي يوم...<br>
+                    اليوم هو يوم ميلادك، اليوم اللي جبتي فيه النور لحياتي.
+                </div>
+                <div class="heart">♥</div>
+            </div>
+
+            <div class="polaroid right">
                 <img src="images/now.jpg" alt="رودينا دلوقتي">
-                <div class="caption">ودلوقتي... أجمل بنت في الدنيا ✨</div>
+                <div class="pin">💗</div>
             </div>
+        </div>
+
+        <div class="count-box">
+            <div class="lbl">العد التنازلي لعيد ميلادك 🎂</div>
+            <div class="count">
+                <div class="u">
+                    <div class="n" id="h">00</div>
+                    <div class="t">ساعات</div>
+                </div>
+                <div class="u">
+                    <div class="n" id="m">00</div>
+                    <div class="t">دقائق</div>
+                </div>
+                <div class="u">
+                    <div class="n" id="s">00</div>
+                    <div class="t">ثواني</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="wish">✨ كل سنة وإنتي طيبة ✨</div>
+
+        <div class="msg">
+            <div class="balloon">🎈</div>
+            <h3>رسالة ليكي ♥</h3>
+            <p>مش عارف منين أبدأ، بس عارف إنك حاجة جميلة حصلت في حياتي.</p>
+            <p>وجودك بيخلي كل يوم له معنى، وابتسامتك بتنور أي مكان تروحيه.</p>
+            <p>أتمنى من كل قلبي إن سنة جديدة تبدأ عليكي تكون مليانة فرح، نجاح، صحة، وحاجات حلوة كتير تفوق خيالك.</p>
+            <p class="end">أنا هنا دايمًا.. بحبك جدًا ♥</p>
+        </div>
+
+        <div class="player">
+            <div class="cover">🎵</div>
+            <div class="meta">
+                <div class="song">أغنية ليكي</div>
+                <div class="artist">من قلب سامح</div>
+            </div>
+            <div class="bar-wrap">
+                <div class="bar"><div class="bar-fill" id="bar"></div></div>
+                <div class="time" id="time">0:00</div>
+            </div>
+            <button class="play-btn" id="btn" onclick="toggle()">▶</button>
         </div>
 
         <div class="footer">
-            صُنع بحب من سامح خصيصًا لرودينا<br>
-            24 أغسطس 2026
+            شكرًا لأنك موجودة في حياتي <span>♥</span>
         </div>
     </div>
 
-    <!-- الأغنية -->
-    <audio id="birthdaySong" loop>
+    <audio id="audio" loop>
         <source src="audio/song.mp3" type="audio/mpeg">
     </audio>
 
     <script>
-        // إنشاء النجوم
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            for (let i = 0; i < 80; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                const size = Math.random() * 3 + 1;
-                star.style.width = size + 'px';
-                star.style.height = size + 'px';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                starsContainer.appendChild(star);
+        setInterval(() => {
+            const e = document.createElement('div');
+            e.className = 'fh';
+            e.textContent = ['💗','💕','💓','💖','❤️'][Math.random()*5|0];
+            e.style.left = Math.random()*100 + 'vw';
+            e.style.fontSize = (13 + Math.random()*16) + 'px';
+            e.style.animationDuration = (5.5 + Math.random()*5) + 's';
+            document.body.appendChild(e);
+            setTimeout(() => e.remove(), 11000);
+        }, 480);
+
+        function tick() {
+            const t = new Date('2026-08-24T00:00:00').getTime() - Date.now();
+            if (t <= 0) {
+                document.getElementById('h').textContent = '00';
+                document.getElementById('m').textContent = '00';
+                document.getElementById('s').textContent = '00';
+                return;
             }
+            document.getElementById('h').textContent = String(Math.floor(t/3600000)).padStart(2,'0');
+            document.getElementById('m').textContent = String(Math.floor((t%3600000)/60000)).padStart(2,'0');
+            document.getElementById('s').textContent = String(Math.floor((t%60000)/1000)).padStart(2,'0');
+        }
+        setInterval(tick, 1000);
+        tick();
+
+        let on = false;
+        const audio = document.getElementById('audio');
+        const btn = document.getElementById('btn');
+        const bar = document.getElementById('bar');
+        const time = document.getElementById('time');
+
+        function toggle() {
+            if (on) {
+                audio.pause();
+                btn.textContent = '▶';
+            } else {
+                audio.play().catch(() => alert('تأكد إن الأغنية موجودة في فولدر audio باسم song.mp3'));
+                btn.textContent = '❚❚';
+            }
+            on = !on;
         }
 
-        // قلوب طايرة
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.className = 'heart';
-            heart.innerHTML = '❤️';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
-            heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
-            document.body.appendChild(heart);
-
-            setTimeout(() => {
-                heart.remove();
-            }, 8000);
-        }
-
-        // بدء الاحتفال
-        function startCelebration() {
-            const song = document.getElementById('birthdaySong');
-            const btn = document.getElementById('playBtn');
-
-            song.play().then(() => {
-                btn.innerHTML = '🎶 الأغنية شغالة... استمتعي يا رودينا';
-                btn.style.background = 'linear-gradient(135deg, #c44569, #6b2d4b)';
-            }).catch(err => {
-                alert('حصل مشكلة في تشغيل الأغنية. تأكد إن الملف موجود في مجلد audio باسم song.mp3');
-            });
-
-            // قلوب مستمرة
-            setInterval(createHeart, 600);
-        }
-
-        // تشغيل عند التحميل
-        createStars();
-        // بعض القلوب من الأول
-        setInterval(createHeart, 1200);
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                bar.style.width = (audio.currentTime / audio.duration * 100) + '%';
+                const m = Math.floor(audio.currentTime / 60);
+                const s = Math.floor(audio.currentTime % 60);
+                time.textContent = m + ':' + String(s).padStart(2,'0');
+            }
+        });
     </script>
 </body>
 </html>
