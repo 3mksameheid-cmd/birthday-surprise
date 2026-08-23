@@ -1,489 +1,2116 @@
+```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لـ رودينا من قلب سامح ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: #0a0610;
-            color: #fff;
-            min-height: 100vh;
-            overflow-x: hidden;
-            position: relative;
-        }
+<title>لـ رودينا من قلب سامح ❤️</title>
 
-        .bg {
-            position: fixed;
-            inset: 0;
-            background: 
-                radial-gradient(ellipse at 20% 20%, rgba(255,50,110,0.13) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(160,30,90,0.1) 0%, transparent 50%),
-                #0a0610;
-            z-index: 0;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
 
-        .fh {
-            position: fixed;
-            pointer-events: none;
-            z-index: 1;
-            animation: rise linear forwards;
-            opacity: 0;
-        }
-        @keyframes rise {
-            0%   { transform: translateY(100vh) scale(0.5) rotate(0deg); opacity: 0; }
-            15%  { opacity: 0.8; }
-            85%  { opacity: 0.5; }
-            100% { transform: translateY(-100px) scale(1.2) rotate(40deg); opacity: 0; }
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .wrap {
-            position: relative;
-            z-index: 10;
-            max-width: 880px;
-            margin: 0 auto;
-            padding: 30px 16px 60px;
-        }
+:root{
+    --pink:#ff4f8b;
+    --pink2:#ff86aa;
+    --dark:#08050c;
+    --card:rgba(255,255,255,.055);
+    --line:rgba(255,120,165,.20);
+    --text:#f8e9ef;
+    --muted:#c995a9;
+}
 
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 18px;
-            margin-bottom: 28px;
-            flex-wrap: wrap;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        .polaroid {
-            background: #16101c;
-            padding: 9px 9px 34px;
-            border-radius: 6px;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.55);
-            position: relative;
-            transition: 0.4s;
-        }
-        .polaroid.left  { transform: rotate(-3.5deg); }
-        .polaroid.right { transform: rotate(3.5deg); }
-        .polaroid:hover { transform: rotate(0) scale(1.05); }
+body{
+    font-family:'Cairo',sans-serif;
+    background:#08050c;
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
 
-        .polaroid img {
-            width: 155px;
-            height: 195px;
-            object-fit: cover;
-            display: block;
-            border-radius: 3px;
-        }
-        .polaroid .pin {
-            position: absolute;
-            bottom: 7px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 18px;
-            filter: drop-shadow(0 0 8px #ff4d8d);
-        }
+/* =========================
+   BACKGROUND
+========================= */
 
-        .center-title {
-            text-align: center;
-            flex: 1;
-            min-width: 220px;
-        }
-        .center-title .t1 {
-            display: block;
-            font-size: 2.3rem;
-            font-weight: 800;
-            color: #fff;
-            text-shadow: 0 0 22px rgba(255,90,140,0.7);
-        }
-        .center-title .t2 {
-            display: block;
-            font-size: 1.95rem;
-            font-weight: 800;
-            background: linear-gradient(90deg, #ff4d8d, #ff8fab);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-top: 4px;
-        }
-        .center-title .sub {
-            font-size: 0.88rem;
-            color: #e0a0b8;
-            line-height: 1.7;
-            margin-top: 12px;
-        }
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
 
-        .count-box {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,90,140,0.22);
-            border-radius: 18px;
-            padding: 16px 22px;
-            max-width: 380px;
-            margin: 0 auto 26px;
-            text-align: center;
-            backdrop-filter: blur(12px);
-        }
-        .count-box .lbl { font-size: 0.9rem; color: #ff8fab; margin-bottom: 10px; }
-        .count { display: flex; justify-content: center; gap: 24px; }
-        .count .n {
-            font-size: 2.1rem;
-            font-weight: 800;
-            color: #ff4d8d;
-            text-shadow: 0 0 16px rgba(255,77,141,0.55);
-        }
-        .count .t { font-size: 0.78rem; color: #c07090; margin-top: 2px; }
+    background:
+    radial-gradient(circle at 15% 15%,rgba(255,45,110,.17),transparent 30%),
+    radial-gradient(circle at 85% 75%,rgba(145,20,90,.16),transparent 32%),
+    radial-gradient(circle at 50% 100%,rgba(255,80,140,.08),transparent 35%),
+    #08050c;
+}
 
-        .wish {
-            text-align: center;
-            font-size: 1.15rem;
-            color: #ffb6c1;
-            margin: 18px 0 30px;
-            font-weight: 600;
-        }
+.noise{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:50;
+    opacity:.035;
 
-        .envelope-section {
-            text-align: center;
-            margin: 10px 0 40px;
-        }
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
 
-        .envelope-hint {
-            font-size: 1rem;
-            color: #ff8fab;
-            margin-bottom: 18px;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
-        }
+.glow{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(75px);
+    pointer-events:none;
+    z-index:-2;
+}
 
-        .envelope {
-            width: 280px;
-            height: 180px;
-            margin: 0 auto;
-            position: relative;
-            cursor: pointer;
-            transition: transform 0.4s;
-        }
-        .envelope:hover { transform: scale(1.05); }
+.glow.one{
+    width:280px;
+    height:280px;
+    background:#ff2777;
+    opacity:.10;
+    top:8%;
+    left:-100px;
+    animation:drift 10s ease-in-out infinite alternate;
+}
 
-        .envelope .back {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(145deg, #ff4d8d, #c41e5a);
-            border-radius: 8px;
-            box-shadow: 0 15px 40px rgba(255,77,141,0.35);
-        }
+.glow.two{
+    width:330px;
+    height:330px;
+    background:#9b1769;
+    opacity:.10;
+    bottom:2%;
+    right:-120px;
+    animation:drift 13s ease-in-out infinite alternate-reverse;
+}
 
-        .envelope .flap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 90px;
-            background: linear-gradient(145deg, #ff6b9d, #ff4d8d);
-            clip-path: polygon(0 0, 50% 70%, 100% 0);
-            transform-origin: top;
-            transition: transform 0.7s ease;
-            z-index: 3;
-            border-radius: 8px 8px 0 0;
-        }
+@keyframes drift{
+    to{
+        transform:translate(80px,-50px) scale(1.15);
+    }
+}
 
-        .envelope.open .flap {
-            transform: rotateX(180deg);
-        }
+/* =========================
+   FLOATING HEARTS
+========================= */
 
-        .envelope .front {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 110px;
-            background: linear-gradient(145deg, #e03a6f, #b01a50);
-            border-radius: 0 0 8px 8px;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.particle{
+    position:fixed;
+    bottom:-30px;
+    pointer-events:none;
+    z-index:2;
+    opacity:0;
 
-        .envelope .heart-seal {
-            font-size: 2.4rem;
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.4));
-            transition: 0.4s;
-        }
-        .envelope.open .heart-seal { opacity: 0; }
+    animation:floatUp linear forwards;
 
-        .letter-content {
-            display: none;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,120,160,0.25);
-            border-radius: 20px;
-            padding: 28px 24px;
-            margin: 20px auto 30px;
-            max-width: 620px;
-            backdrop-filter: blur(12px);
-            animation: fadeIn 1s ease;
-        }
-        .letter-content.show { display: block; }
+    text-shadow:
+    0 0 10px rgba(255,70,140,.8),
+    0 0 20px rgba(255,70,140,.3);
+}
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+@keyframes floatUp{
 
-        .letter-content h3 {
-            text-align: center;
-            color: #ff8fab;
-            font-size: 1.3rem;
-            margin-bottom: 18px;
-        }
-        .letter-content p {
-            font-size: 1.08rem;
-            line-height: 2;
-            color: #f5dce4;
-            margin-bottom: 16px;
-            text-align: right;
-        }
-        .letter-content .sign {
-            text-align: left;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #ffd700;
-            margin-top: 22px;
-        }
+    0%{
+        transform:
+        translateY(0)
+        translateX(0)
+        rotate(0)
+        scale(.5);
 
-        .player {
-            background: rgba(255,255,255,0.045);
-            border: 1px solid rgba(255,90,140,0.2);
-            border-radius: 18px;
-            padding: 14px 18px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin: 0 auto 30px;
-            max-width: 480px;
-            backdrop-filter: blur(10px);
-        }
-        .player .cover {
-            width: 48px;
-            height: 48px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #ff4d8d, #b01a50);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-        }
-        .player .meta { flex: 1; min-width: 0; }
-        .player .song { font-weight: 700; font-size: 0.95rem; }
-        .player .artist { font-size: 0.78rem; color: #c07090; }
-        .play-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: none;
-            background: linear-gradient(135deg, #ff4d8d, #c41e5a);
-            color: #fff;
-            font-size: 1rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 5px 18px rgba(255,77,141,0.4);
-            flex-shrink: 0;
-        }
+        opacity:0;
+    }
 
-        .footer {
-            text-align: center;
-            font-size: 0.95rem;
-            color: #c07090;
-            margin-top: 10px;
-        }
-        .footer span { color: #ff6b9d; }
+    12%{
+        opacity:.8;
+    }
 
-        @media (max-width: 640px) {
-            .hero { flex-direction: column; gap: 18px; }
-            .polaroid.left, .polaroid.right { transform: none !important; }
-            .polaroid img { width: 145px; height: 180px; }
-            .center-title .t1 { font-size: 1.9rem; }
-            .center-title .t2 { font-size: 1.6rem; }
-            .envelope { width: 240px; height: 155px; }
-        }
-    </style>
+    80%{
+        opacity:.45;
+    }
+
+    100%{
+        transform:
+        translateY(-115vh)
+        translateX(var(--x))
+        rotate(180deg)
+        scale(1.15);
+
+        opacity:0;
+    }
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.wrap{
+    position:relative;
+    z-index:5;
+
+    max-width:980px;
+
+    margin:auto;
+
+    padding:
+    34px 18px 70px;
+}
+
+.topline{
+    text-align:center;
+
+    color:#b97991;
+
+    font-size:.72rem;
+
+    letter-spacing:2px;
+
+    margin-bottom:15px;
+
+    opacity:.85;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+
+    display:grid;
+
+    grid-template-columns:
+    190px
+    1fr
+    190px;
+
+    gap:20px;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photo-card{
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.11),
+        rgba(255,255,255,.035)
+    );
+
+    border:
+    1px solid
+    rgba(255,255,255,.12);
+
+    padding:
+    10px 10px 34px;
+
+    border-radius:8px;
+
+    box-shadow:
+    0 20px 55px rgba(0,0,0,.55);
+
+    position:relative;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(8px);
+
+    transition:
+    .55s cubic-bezier(.2,.8,.2,1);
+}
+
+.photo-card.left{
+    transform:rotate(-4deg);
+}
+
+.photo-card.right{
+    transform:rotate(4deg);
+}
+
+.photo-card:hover{
+    transform:
+    rotate(0)
+    translateY(-8px)
+    scale(1.035);
+}
+
+.photo-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    linear-gradient(
+        115deg,
+        transparent 35%,
+        rgba(255,255,255,.18) 50%,
+        transparent 65%
+    );
+
+    transform:translateX(-120%);
+
+    animation:shine 6s infinite;
+}
+
+@keyframes shine{
+
+    0%,55%{
+        transform:translateX(-120%);
+    }
+
+    70%,100%{
+        transform:translateX(120%);
+    }
+}
+
+.photo-card img{
+
+    width:100%;
+
+    height:205px;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:4px;
+
+    filter:
+    saturate(.95)
+    contrast(1.04);
+
+    transition:.5s;
+}
+
+.photo-card:hover img{
+    transform:scale(1.04);
+}
+
+.pin{
+
+    position:absolute;
+
+    top:6px;
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+    font-size:15px;
+
+    filter:
+    drop-shadow(
+        0 0 8px #ff4f8b
+    );
+
+    z-index:3;
+}
+
+.caption{
+
+    position:absolute;
+
+    bottom:6px;
+
+    left:0;
+    right:0;
+
+    text-align:center;
+
+    font-family:Amiri,serif;
+
+    color:#dca9bb;
+
+    font-size:.9rem;
+}
+
+/* =========================
+   CENTER TITLE
+========================= */
+
+.center{
+
+    text-align:center;
+
+    padding:10px;
+}
+
+.mini-heart{
+
+    display:inline-block;
+
+    font-size:1.3rem;
+
+    animation:
+    heartbeat 1.7s infinite;
+}
+
+@keyframes heartbeat{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    15%{
+        transform:scale(1.22);
+    }
+
+    30%{
+        transform:scale(1);
+    }
+}
+
+.center h1{
+
+    font-size:2.55rem;
+
+    line-height:1.35;
+
+    font-weight:800;
+
+    text-shadow:
+    0 0 28px
+    rgba(255,77,141,.55);
+}
+
+.center h2{
+
+    font-size:2rem;
+
+    margin-top:2px;
+
+    font-weight:800;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff4f8b,
+        #ffd0dd,
+        #ff75a0,
+        #ff4f8b
+    );
+
+    background-size:250% auto;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent;
+
+    animation:
+    gradient 5s linear infinite;
+}
+
+@keyframes gradient{
+
+    to{
+        background-position:
+        250% center;
+    }
+}
+
+.center .sub{
+
+    color:#d7a2b5;
+
+    line-height:2;
+
+    margin-top:13px;
+
+    font-size:.93rem;
+}
+
+.typed{
+
+    min-height:30px;
+
+    color:#ffb3c8;
+
+    font-size:.9rem;
+
+    margin-top:9px;
+}
+
+.cursor{
+    animation:
+    blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.count-box{
+
+    max-width:500px;
+
+    margin:
+    0 auto 24px;
+
+    border-radius:22px;
+
+    padding:
+    18px 20px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.065),
+        rgba(255,255,255,.025)
+    );
+
+    border:
+    1px solid
+    var(--line);
+
+    box-shadow:
+    0 18px 55px rgba(0,0,0,.28);
+
+    backdrop-filter:blur(16px);
+}
+
+.count-label{
+
+    color:#ff9db8;
+
+    font-size:.85rem;
+
+    margin-bottom:9px;
+}
+
+.count{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:34px;
+}
+
+.n{
+
+    font-size:2.25rem;
+
+    font-weight:800;
+
+    color:#ff5a91;
+
+    text-shadow:
+    0 0 18px
+    rgba(255,70,140,.45);
+}
+
+.t{
+
+    font-size:.72rem;
+
+    color:#b77c93;
+}
+
+/* =========================
+   WISH
+========================= */
+
+.wish{
+
+    text-align:center;
+
+    color:#ffd0dc;
+
+    font-size:1.05rem;
+
+    font-weight:600;
+
+    margin:
+    18px 0 35px;
+}
+
+.wish span{
+
+    display:inline-block;
+
+    animation:
+    float 2.2s
+    ease-in-out infinite;
+}
+
+@keyframes float{
+
+    50%{
+        transform:
+        translateY(-5px);
+    }
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#8f526c;
+
+    font-size:.7rem;
+
+    margin:
+    25px auto;
+
+    max-width:700px;
+}
+
+.divider::before,
+.divider::after{
+
+    content:"";
+
+    height:1px;
+
+    flex:1;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        var(--line),
+        transparent
+    );
+}
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-section{
+
+    text-align:center;
+
+    margin:
+    12px 0 35px;
+}
+
+.hint{
+
+    color:#ff9bb7;
+
+    font-size:.9rem;
+
+    margin-bottom:16px;
+
+    animation:
+    pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+    50%{
+        opacity:.55;
+    }
+}
+
+.envelope{
+
+    width:310px;
+
+    height:195px;
+
+    margin:auto;
+
+    position:relative;
+
+    cursor:pointer;
+
+    perspective:900px;
+
+    transition:.4s;
+
+    filter:
+    drop-shadow(
+        0 22px 28px
+        rgba(0,0,0,.42)
+    );
+}
+
+.envelope:hover{
+
+    transform:
+    translateY(-6px)
+    scale(1.025);
+}
+
+.env-back{
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:9px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #ff5b95,
+        #9d164d
+    );
+
+    box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.25),
+
+    0 0 35px
+    rgba(255,60,130,.18);
+}
+
+.env-front{
+
+    position:absolute;
+
+    inset:auto 0 0;
+
+    height:118px;
+
+    border-radius:
+    0 0 9px 9px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #e23d76,
+        #9d164d
+    );
+
+    z-index:3;
+
+    clip-path:
+    polygon(
+        0 0,
+        50% 48%,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+}
+
+.flap{
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    height:110px;
+
+    background:
+    linear-gradient(
+        145deg,
+        #ff7aa7,
+        #ed3f7c
+    );
+
+    clip-path:
+    polygon(
+        0 0,
+        50% 76%,
+        100% 0
+    );
+
+    transform-origin:top;
+
+    transition:
+    transform .8s
+    cubic-bezier(.2,.75,.2,1);
+
+    z-index:5;
+}
+
+.envelope.open .flap{
+    transform:
+    rotateX(180deg);
+}
+
+.seal{
+
+    position:absolute;
+
+    z-index:7;
+
+    left:50%;
+
+    top:91px;
+
+    transform:
+    translate(-50%,-50%);
+
+    font-size:2.35rem;
+
+    transition:.45s;
+}
+
+.envelope.open .seal{
+
+    opacity:0;
+
+    transform:
+    translate(-50%,-50%)
+    scale(.4);
+}
+
+/* =========================
+   LETTER
+========================= */
+
+.letter{
+
+    display:none;
+
+    max-width:720px;
+
+    margin:
+    20px auto 32px;
+
+    border-radius:24px;
+
+    padding:
+    30px 27px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.065),
+        rgba(255,255,255,.025)
+    );
+
+    border:
+    1px solid
+    var(--line);
+
+    box-shadow:
+    0 18px 55px
+    rgba(0,0,0,.28);
+
+    backdrop-filter:blur(16px);
+
+    animation:
+    letterIn .9s ease both;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.letter.show{
+    display:block;
+}
+
+.letter::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    right:12%;
+
+    width:180px;
+
+    height:1px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #ff6b9b,
+        transparent
+    );
+
+    box-shadow:
+    0 0 15px #ff6b9b;
+}
+
+@keyframes letterIn{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(25px)
+        scale(.98);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+.letter h3{
+
+    text-align:center;
+
+    color:#ff9bb7;
+
+    font-size:1.35rem;
+
+    margin-bottom:20px;
+}
+
+.letter p{
+
+    color:#f0dbe2;
+
+    font-size:1.04rem;
+
+    line-height:2.15;
+
+    margin-bottom:14px;
+}
+
+.letter p b{
+    color:#ff9db8;
+}
+
+.small-note{
+
+    color:#b77991;
+
+    font-size:.82rem;
+
+    text-align:center;
+
+    margin:
+    20px 0;
+}
+
+.sign{
+
+    text-align:left;
+
+    color:#ffd77b;
+
+    font-family:Amiri,serif;
+
+    font-size:1.45rem;
+
+    margin-top:22px;
+}
+
+/* =========================
+   MUSIC PLAYER
+========================= */
+
+.player{
+
+    max-width:560px;
+
+    margin:
+    0 auto 30px;
+
+    border-radius:20px;
+
+    padding:
+    13px 15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.065),
+        rgba(255,255,255,.025)
+    );
+
+    border:
+    1px solid
+    var(--line);
+
+    box-shadow:
+    0 18px 55px
+    rgba(0,0,0,.28);
+
+    backdrop-filter:blur(16px);
+}
+
+.cover{
+
+    width:54px;
+
+    height:54px;
+
+    border-radius:13px;
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:1.45rem;
+
+    background:
+    radial-gradient(
+        circle at 35% 25%,
+        #ff9ab8,
+        #d22c69 55%,
+        #721033
+    );
+
+    box-shadow:
+    0 7px 22px
+    rgba(255,50,120,.22);
+
+    animation:
+    coverPulse 2.4s infinite;
+}
+
+@keyframes coverPulse{
+
+    50%{
+        box-shadow:
+        0 7px 30px
+        rgba(255,50,120,.42);
+    }
+}
+
+.meta{
+    flex:1;
+    text-align:right;
+}
+
+.song{
+    font-weight:700;
+}
+
+.artist{
+
+    font-size:.76rem;
+
+    color:#b77b92;
+}
+
+.play{
+
+    width:43px;
+
+    height:43px;
+
+    border:0;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    font-size:1rem;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff5791,
+        #ae174f
+    );
+
+    box-shadow:
+    0 7px 20px
+    rgba(255,60,130,.3);
+
+    transition:.25s;
+}
+
+.play:hover{
+    transform:scale(1.08);
+}
+
+/* =========================
+   MEMORY
+========================= */
+
+.memory{
+
+    max-width:720px;
+
+    margin:
+    0 auto 30px;
+
+    border-radius:22px;
+
+    padding:24px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.065),
+        rgba(255,255,255,.025)
+    );
+
+    border:
+    1px solid
+    var(--line);
+
+    box-shadow:
+    0 18px 55px
+    rgba(0,0,0,.28);
+
+    backdrop-filter:blur(16px);
+}
+
+.memory h3{
+
+    color:#ff9db8;
+
+    font-size:1.1rem;
+
+    margin-bottom:8px;
+}
+
+.memory p{
+
+    color:#c996a9;
+
+    font-size:.9rem;
+
+    line-height:1.9;
+}
+
+.dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:8px;
+
+    margin-top:14px;
+}
+
+.dot{
+
+    width:6px;
+
+    height:6px;
+
+    background:#ff6a99;
+
+    border-radius:50%;
+
+    animation:
+    dot 1.5s infinite;
+}
+
+.dot:nth-child(2){
+    animation-delay:.2s;
+}
+
+.dot:nth-child(3){
+    animation-delay:.4s;
+}
+
+@keyframes dot{
+
+    50%{
+        transform:
+        translateY(-4px);
+
+        opacity:.4;
+    }
+}
+
+/* =========================
+   FINAL
+========================= */
+
+.final{
+
+    text-align:center;
+
+    max-width:720px;
+
+    margin:auto;
+
+    border-radius:22px;
+
+    padding:
+    25px 20px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.065),
+        rgba(255,255,255,.025)
+    );
+
+    border:
+    1px solid
+    var(--line);
+
+    box-shadow:
+    0 18px 55px
+    rgba(0,0,0,.28);
+
+    backdrop-filter:blur(16px);
+}
+
+.final .big{
+
+    font-family:Amiri,serif;
+
+    font-size:1.65rem;
+
+    color:#ffd2df;
+}
+
+.final .under{
+
+    color:#a86d83;
+
+    font-size:.8rem;
+
+    margin-top:8px;
+}
+
+.footer{
+
+    text-align:center;
+
+    color:#8e5068;
+
+    font-size:.78rem;
+
+    margin-top:28px;
+}
+
+.footer b{
+    color:#ff739f;
+}
+
+/* =========================
+   FLASH
+========================= */
+
+.flash{
+
+    position:fixed;
+
+    inset:0;
+
+    background:white;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:100;
+}
+
+.flash.on{
+    animation:flash .5s ease;
+}
+
+@keyframes flash{
+
+    20%{
+        opacity:.14;
+    }
+
+    100%{
+        opacity:0;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:760px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+        max-width:390px;
+    }
+
+    .photo-card{
+
+        width:180px;
+
+        margin:auto;
+    }
+
+    .photo-card.left,
+    .photo-card.right{
+
+        transform:rotate(0);
+    }
+
+    .center{
+        order:-1;
+    }
+
+    .center h1{
+        font-size:2rem;
+    }
+
+    .center h2{
+        font-size:1.6rem;
+    }
+
+    .count{
+        gap:23px;
+    }
+
+    .n{
+        font-size:1.8rem;
+    }
+
+    .envelope{
+
+        width:270px;
+
+        height:170px;
+    }
+
+    .letter{
+
+        padding:
+        24px 18px;
+    }
+
+    .letter p{
+
+        font-size:.98rem;
+
+        line-height:2;
+    }
+}
+</style>
 </head>
+
 <body>
-    <div class="bg"></div>
 
-    <div class="wrap">
-        <div class="hero">
-            <div class="polaroid left">
-                <img src="child.jpg" alt="رودينا صغيرة">
-                <div class="pin">💗</div>
-            </div>
+<div class="noise"></div>
 
-            <div class="center-title">
-                <span class="t1">عيد ميلاد سعيد</span>
-                <span class="t2">♥ للأجمل قلب</span>
-                <div class="sub">
-                    اليوم مش زي أي يوم...<br>
-                    اليوم اللي النور دخل فيه حياتي
-                </div>
-            </div>
+<div class="glow one"></div>
+<div class="glow two"></div>
 
-            <div class="polaroid right">
-                <img src="now.jpg" alt="رودينا دلوقتي">
-                <div class="pin">💗</div>
-            </div>
-        </div>
+<div class="flash" id="flash"></div>
 
-        <div class="count-box">
-            <div class="lbl">العد التنازلي لعيد ميلادك 🎂</div>
-            <div class="count">
-                <div>
-                    <div class="n" id="h">00</div>
-                    <div class="t">ساعات</div>
-                </div>
-                <div>
-                    <div class="n" id="m">00</div>
-                    <div class="t">دقائق</div>
-                </div>
-                <div>
-                    <div class="n" id="s">00</div>
-                    <div class="t">ثواني</div>
-                </div>
-            </div>
-        </div>
+<div class="wrap">
 
-        <div class="wish">✨ كل سنة وإنتي أجمل ✨</div>
-
-        <div class="envelope-section">
-            <div class="envelope-hint">اضغطي على الظرف عشان تفتحي الرسالة 💌</div>
-            
-            <div class="envelope" id="envelope" onclick="openEnvelope()">
-                <div class="back"></div>
-                <div class="flap"></div>
-                <div class="front">
-                    <div class="heart-seal">❤️</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="letter-content" id="letterContent">
-            <h3>رسالة من قلبي ليكي ❤️</h3>
-            
-            <p>يا رودينا،</p>
-            
-            <p>مش عارف أكتبلك إزاي وأنا قلبي مليان أوي. كل مرة بفكر فيكِ بحس إن الكلام مش كفاية، وإن مفيش حروف تقدر توصف قد إيه إنتي غالية.</p>
-            
-            <p>من أول ما شوفتك وأنتِ صغيرة، لحد ما كبرتي وبقيتي البنت اللي بتخلي الدنيا أحلى… كنتِ دايمًا موجودة في قلبي حتى قبل ما أعرف إن القلب ده هيبقى ملككِ.</p>
-            
-            <p>وجودكِ معايا مش حاجة عادية. وجودكِ هو السبب اللي بيخليني أصحى كل يوم وأنا مبسوط، وهو السبب اللي بيخليني أحلم بكرة، وهو السبب اللي بيخليني أشكر ربنا كل ليلة.</p>
-            
-            <p>النهارده عيد ميلادك، وأنا مش جايب هدايا تتفتح وتخلص. أنا جايبلك حاجة أثمن: كل الحب اللي جوايا، وكل الذكريات الحلوة، وكل الدعوات اللي بدعيهالك وأنا نايم وأنا صاحي.</p>
-            
-            <p>عايزك تعرفي إنك مش بس حبيبتي… إنتي بيتي، وإنتي ضحكتي، وإنتي الأمان اللي بدور عليه. وإن شاء الله أفضل جنبك في كل عيد ميلاد، وفي كل يوم عادي، وفي كل لحظة فرح أو تعب.</p>
-            
-            <p>بحبك يا رودينا. بحبك حب كبير أوي، حب مش بيعرف يوصف نفسه، حب بيكبر كل يوم أكتر من اللي قبله.</p>
-            
-            <p>كل سنة وإنتي طيبة، وكل سنة وإنتي أغلى حاجة في حياتي.</p>
-            
-            <div class="sign">سامح ❤️</div>
-        </div>
-
-        <div class="player">
-            <div class="cover">🎵</div>
-            <div class="meta">
-                <div class="song">أغنية ليكي</div>
-                <div class="artist">من قلب سامح</div>
-            </div>
-            <button class="play-btn" id="btn" onclick="toggle()">▶</button>
-        </div>
-
-        <div class="footer">
-            اتعملت بحب كبير مخصوص ليكي <span>♥</span>
-        </div>
+    <div class="topline">
+        A LITTLE SURPRISE • MADE WITH LOVE
     </div>
 
-    <audio id="audio" loop>
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
 
-    <script>
-        setInterval(() => {
-            const e = document.createElement('div');
-            e.className = 'fh';
-            e.textContent = ['💗','💕','💓','💖','❤️','✨'][Math.random()*6|0];
-            e.style.left = Math.random()*100 + 'vw';
-            e.style.fontSize = (14 + Math.random()*18) + 'px';
-            e.style.animationDuration = (5 + Math.random()*6) + 's';
-            document.body.appendChild(e);
-            setTimeout(() => e.remove(), 12000);
-        }, 400);
+    <!-- ================= HERO ================= -->
 
-        function tick() {
-            const t = new Date('2026-08-24T00:00:00').getTime() - Date.now();
-            if (t <= 0) {
-                document.getElementById('h').textContent = '00';
-                document.getElementById('m').textContent = '00';
-                document.getElementById('s').textContent = '00';
-                return;
+    <section class="hero">
+
+        <div class="photo-card left">
+
+            <div class="pin">
+                📌
+            </div>
+
+            <img
+                src="child.jpg"
+                alt="رودينا وهي صغيرة"
+            >
+
+            <div class="caption">
+                رودينا زمان 🤍
+            </div>
+
+        </div>
+
+
+        <div class="center">
+
+            <div class="mini-heart">
+                ♥
+            </div>
+
+            <h1>
+                عيد ميلاد سعيد
+            </h1>
+
+            <h2>
+                يا رودينا ❤️
+            </h2>
+
+            <div class="sub">
+                اليوم مش زي أي يوم...<br>
+                النهارده اليوم اللي الدنيا بقت أحلى بوجودك.
+            </div>
+
+            <div class="typed">
+                <span id="typed"></span>
+                <span class="cursor">|</span>
+            </div>
+
+        </div>
+
+
+        <div class="photo-card right">
+
+            <div class="pin">
+                📌
+            </div>
+
+            <img
+                src="now.jpg"
+                alt="رودينا دلوقتي"
+            >
+
+            <div class="caption">
+                رودينا دلوقتي ✨
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= COUNTDOWN ================= -->
+
+    <div class="count-box">
+
+        <div class="count-label">
+            ⏳ مستني اللحظة دي من زمان
+        </div>
+
+        <div class="count">
+
+            <div>
+                <div class="n" id="h">
+                    00
+                </div>
+
+                <div class="t">
+                    ساعة
+                </div>
+            </div>
+
+
+            <div>
+                <div class="n" id="m">
+                    00
+                </div>
+
+                <div class="t">
+                    دقيقة
+                </div>
+            </div>
+
+
+            <div>
+                <div class="n" id="s">
+                    00
+                </div>
+
+                <div class="t">
+                    ثانية
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="wish">
+
+        <span>✨</span>
+
+        كل سنة وإنتي أجمل حاجة حصلتلي
+
+        <span>✨</span>
+
+    </div>
+
+
+    <div class="divider">
+        في حاجة صغيرة مستنياكي تحت
+    </div>
+
+
+    <!-- ================= ENVELOPE ================= -->
+
+    <section class="envelope-section">
+
+        <div class="hint">
+
+            اضغطي على الظرف...
+            بس متقوليش إني محذرتكيش 💌
+
+        </div>
+
+
+        <div
+            class="envelope"
+            id="envelope"
+            onclick="openEnvelope()"
+        >
+
+            <div class="env-back"></div>
+
+            <div class="flap"></div>
+
+            <div class="env-front"></div>
+
+            <div class="seal">
+                ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LETTER ================= -->
+
+    <section
+        class="letter"
+        id="letter"
+    >
+
+        <h3>
+            رسالة من قلبي ليكي ❤️
+        </h3>
+
+
+        <p>
+            يا رودينا،
+        </p>
+
+
+        <p>
+            أنا مش عارف أبدأ الكلام منين، بس عارف إن النهارده مينفعش يعدي عادي من غير ما أقولك كل اللي جوايا. يمكن الكلام ده بسيط، بس كل كلمة فيه طالعة بجد من قلبي.
+        </p>
+
+
+        <p>
+            كل سنة وإنتي طيبة يا أجمل رودينا. من أول ما عرفتك وإنتي ليكي مكان مختلف عندي، ومع الوقت المكان ده كبر لحد ما بقيتي جزء مهم جدًا من حياتي.
+        </p>
+
+
+        <p>
+            وأنا بتفرج على صورتك وإنتي صغيرة، وبعدين صورتك دلوقتي، بحس قد إيه الوقت بيجري بسرعة. بس الحاجة الوحيدة اللي أنا متأكد منها إن وجودك في حياتي كان من أحلى الحاجات اللي حصلتلي.
+        </p>
+
+
+        <p>
+            بحب ضحكتك، وطريقتك، والكلام اللي بينا، وحتى التفاصيل الصغيرة اللي يمكن إنتي مش واخدة بالك منها. الحاجات دي كلها بالنسبة لي مش صغيرة خالص.
+        </p>
+
+
+        <p>
+            نفسي السنة الجديدة دي تكون أهدى وأحلى عليكي، وتحققي فيها كل حاجة نفسك فيها، وأفضل دايمًا الشخص اللي يفرح لفرحتك ويسندك لما الدنيا تضايقك.
+        </p>
+
+
+        <p>
+            ومهما كتبت، مش هعرف أوصفلك قد إنتي غالية عندي. بس لو في حاجة واحدة عايزك تفتكريها من الرسالة دي فهي:
+            <b>
+                أنا بحبك، وفرحان إنك في حياتي.
+            </b>
+        </p>
+
+
+        <p>
+            كل سنة وإنتي طيبة يا رودينا، وكل سنة وإنتي أقرب وأغلى وأجمل. ❤️
+        </p>
+
+
+        <div class="small-note">
+
+            ودي مش مجرد رسالة عيد ميلاد...
+            دي حاجة صغيرة من حاجات كتير نفسي أقولها ليكي.
+
+        </div>
+
+
+        <div class="sign">
+            سامح ❤️
+        </div>
+
+    </section>
+
+
+    <!-- ================= MUSIC ================= -->
+
+    <div class="divider">
+        ودي الأغنية اللي اخترتها مخصوص
+    </div>
+
+
+    <div class="player">
+
+        <div class="cover">
+            🎵
+        </div>
+
+
+        <div class="meta">
+
+            <div class="song">
+                أغنية ليكي
+            </div>
+
+            <div class="artist">
+                اختارتها مخصوص عشانك • سامح
+            </div>
+
+        </div>
+
+
+        <button
+            class="play"
+            id="btn"
+            onclick="toggle()"
+        >
+            ▶
+        </button>
+
+    </div>
+
+
+    <!-- ================= MEMORY ================= -->
+
+    <section class="memory">
+
+        <h3>
+            عارفة إيه أحلى حاجة؟
+        </h3>
+
+        <p>
+            إن كل مرة أشوفك فيها، حتى لو كانت لحظة عادية جدًا، بتفضل في دماغي بطريقة مش عادية.
+        </p>
+
+
+        <div class="dots">
+
+            <i class="dot"></i>
+            <i class="dot"></i>
+            <i class="dot"></i>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FINAL ================= -->
+
+    <section class="final">
+
+        <div class="big">
+            "كل سنة وإنتي في حياتي يا رودينا ❤️"
+        </div>
+
+        <div class="under">
+            اتعملت مخصوص ليكي... بكل الحب اللي عند سامح.
+        </div>
+
+    </section>
+
+
+    <div class="footer">
+
+        Made with
+        <b>♥</b>
+        by Samah • 2026
+
+    </div>
+
+</div>
+
+
+<!-- ================= MUSIC FILE ================= -->
+
+<audio
+    id="audio"
+    loop
+>
+
+    <source
+        src="song.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+<script>
+
+/* =========================================
+   TYPING ANIMATION
+========================================= */
+
+const phrases = [
+
+    "عملتلك حاجة صغيرة بس من قلبي...",
+
+    "مش كل الكلام بيتقال... بعضه بيتعمل ❤️",
+
+    "والنهارده كان لازم يبقى مختلف.",
+
+    "كل سنة وإنتي معايا يا رودينا."
+
+];
+
+let pi = 0;
+let ci = 0;
+let deleting = false;
+
+const typed =
+    document.getElementById("typed");
+
+
+function typeText(){
+
+    const phrase =
+        phrases[pi];
+
+
+    typed.textContent =
+        phrase.slice(0,ci);
+
+
+    if(!deleting && ci < phrase.length){
+
+        ci++;
+
+        setTimeout(
+            typeText,
+            55
+        );
+
+    }
+
+    else if(!deleting){
+
+        deleting = true;
+
+        setTimeout(
+            typeText,
+            1500
+        );
+
+    }
+
+    else if(ci > 0){
+
+        ci--;
+
+        setTimeout(
+            typeText,
+            28
+        );
+
+    }
+
+    else{
+
+        deleting = false;
+
+        pi =
+            (pi + 1)
+            %
+            phrases.length;
+
+        setTimeout(
+            typeText,
+            300
+        );
+
+    }
+
+}
+
+typeText();
+
+
+/* =========================================
+   FLOATING PARTICLES
+========================================= */
+
+function createParticle(){
+
+    const e =
+        document.createElement("div");
+
+    e.className =
+        "particle";
+
+
+    const items = [
+        "💗",
+        "💕",
+        "💓",
+        "💖",
+        "❤️",
+        "✨",
+        "·"
+    ];
+
+
+    e.textContent =
+        items[
+            Math.floor(
+                Math.random()
+                *
+                items.length
+            )
+        ];
+
+
+    e.style.left =
+        Math.random()
+        *
+        100
+        +
+        "vw";
+
+
+    e.style.fontSize =
+        12
+        +
+        Math.random()
+        *
+        19
+        +
+        "px";
+
+
+    e.style.setProperty(
+        "--x",
+        (Math.random()*180-90)
+        +
+        "px"
+    );
+
+
+    e.style.animationDuration =
+        6
+        +
+        Math.random()*8
+        +
+        "s";
+
+
+    document.body.appendChild(e);
+
+
+    setTimeout(
+        () => e.remove(),
+        15000
+    );
+
+}
+
+
+setInterval(
+    createParticle,
+    520
+);
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+function tick(){
+
+    const target =
+        new Date(
+            "2026-08-24T00:00:00"
+        ).getTime();
+
+
+    const time =
+        target - Date.now();
+
+
+    const h =
+        document.getElementById("h");
+
+    const m =
+        document.getElementById("m");
+
+    const s =
+        document.getElementById("s");
+
+
+    if(time <= 0){
+
+        h.textContent = "00";
+        m.textContent = "00";
+        s.textContent = "00";
+
+        return;
+    }
+
+
+    h.textContent =
+        String(
+            Math.floor(
+                time / 3600000
+            )
+        ).padStart(2,"0");
+
+
+    m.textContent =
+        String(
+            Math.floor(
+                (time % 3600000)
+                /
+                60000
+            )
+        ).padStart(2,"0");
+
+
+    s.textContent =
+        String(
+            Math.floor(
+                (time % 60000)
+                /
+                1000
+            )
+        ).padStart(2,"0");
+
+}
+
+
+setInterval(
+    tick,
+    1000
+);
+
+tick();
+
+
+/* =========================================
+   ENVELOPE
+========================================= */
+
+let opened = false;
+
+
+function openEnvelope(){
+
+    if(opened)
+        return;
+
+
+    opened = true;
+
+
+    const envelope =
+        document.getElementById(
+            "envelope"
+        );
+
+
+    const letter =
+        document.getElementById(
+            "letter"
+        );
+
+
+    const flash =
+        document.getElementById(
+            "flash"
+        );
+
+
+    envelope.classList.add(
+        "open"
+    );
+
+
+    flash.classList.add(
+        "on"
+    );
+
+
+    setTimeout(
+        () => {
+            flash.classList.remove(
+                "on"
+            );
+        },
+        500
+    );
+
+
+    /* انفجار قلوب */
+
+    for(
+        let i = 0;
+        i < 45;
+        i++
+    ){
+
+        setTimeout(
+            createParticle,
+            i * 45
+        );
+
+    }
+
+
+    setTimeout(
+        () => {
+
+            letter.classList.add(
+                "show"
+            );
+
+
+            letter.scrollIntoView({
+                behavior:"smooth",
+                block:"center"
+            });
+
+        },
+        650
+    );
+
+
+    /* تشغيل الأغنية */
+
+    audio.play()
+        .then(
+            () => {
+
+                playing = true;
+
+                btn.textContent =
+                    "❚❚";
+
             }
-            document.getElementById('h').textContent = String(Math.floor(t/3600000)).padStart(2,'0');
-            document.getElementById('m').textContent = String(Math.floor((t%3600000)/60000)).padStart(2,'0');
-            document.getElementById('s').textContent = String(Math.floor((t%60000)/1000)).padStart(2,'0');
-        }
-        setInterval(tick, 1000);
-        tick();
+        )
+        .catch(
+            () => {}
+        );
 
-        function openEnvelope() {
-            const env = document.getElementById('envelope');
-            const letter = document.getElementById('letterContent');
-            
-            if (!env.classList.contains('open')) {
-                env.classList.add('open');
-                setTimeout(() => {
-                    letter.classList.add('show');
-                    for (let i = 0; i < 30; i++) {
-                        setTimeout(() => {
-                            const e = document.createElement('div');
-                            e.className = 'fh';
-                            e.textContent = ['💗','💕','💓','💖','❤️'][Math.random()*5|0];
-                            e.style.left = Math.random()*100 + 'vw';
-                            e.style.fontSize = (16 + Math.random()*22) + 'px';
-                            e.style.animationDuration = (4 + Math.random()*4) + 's';
-                            document.body.appendChild(e);
-                            setTimeout(() => e.remove(), 9000);
-                        }, i * 70);
-                    }
-                }, 500);
-            }
-        }
+}
 
-        let on = false;
-        const audio = document.getElementById('audio');
-        const btn = document.getElementById('btn');
 
-        function toggle() {
-            if (on) {
-                audio.pause();
-                btn.textContent = '▶';
-            } else {
-                audio.play();
-                btn.textContent = '❚❚';
-            }
-            on = !on;
-        }
+/* =========================================
+   MUSIC
+========================================= */
 
-        window.addEventListener('load', () => {
-            audio.play().then(() => {
-                on = true;
-                btn.textContent = '❚❚';
-            }).catch(() => {});
-        });
-    </script>
+let playing = false;
+
+const audio =
+    document.getElementById(
+        "audio"
+    );
+
+
+const btn =
+    document.getElementById(
+        "btn"
+    );
+
+
+function toggle(){
+
+    if(audio.paused){
+
+        audio.play()
+            .then(
+                () => {
+
+                    playing = true;
+
+                    btn.textContent =
+                        "❚❚";
+
+                }
+            );
+
+    }
+
+    else{
+
+        audio.pause();
+
+        playing = false;
+
+        btn.textContent =
+            "▶";
+
+    }
+
+}
+
+
+/* =========================================
+   TRY AUTOPLAY
+========================================= */
+
+window.addEventListener(
+    "load",
+    () => {
+
+        audio.play()
+            .then(
+                () => {
+
+                    playing = true;
+
+                    btn.textContent =
+                        "❚❚";
+
+                }
+            )
+            .catch(
+                () => {}
+            );
+
+    }
+);
+
+</script>
+
 </body>
 </html>
+```
