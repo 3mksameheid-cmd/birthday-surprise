@@ -3,577 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عيد ميلاد سعيد Mirae! ✨</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #ff4a75;
-            --secondary-color: #ff8a9e;
-            --dark-bg: #0a0a0c;
-            --card-bg: rgba(255, 255, 255, 0.07);
-            --text-light: #ffffff;
-        }
+    <title>عيد ميلاد سعيد ❤️</title>
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="stylesheet" href="style.css">
 
-        body {
-            font-family: 'Cairo', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        /* 1. شاشة قفل كلمة السر */
-        #password-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #0d0d11;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 10000;
-            transition: all 0.8s ease-in-out;
-        }
-
-        .login-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            backdrop-filter: blur(10px);
-            max-width: 400px;
-            width: 90%;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-        }
-
-        .login-box h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-
-        .login-box input {
-            width: 100%;
-            padding: 12px 20px;
-            border-radius: 30px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            background: rgba(0, 0, 0, 0.4);
-            color: #fff;
-            font-size: 1.2rem;
-            text-align: center;
-            outline: none;
-            margin-bottom: 20px;
-            transition: all 0.3s;
-        }
-
-        .login-box input:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 15px rgba(255, 74, 117, 0.4);
-        }
-
-        .login-box button {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            border: none;
-            padding: 12px 35px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .login-box button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 74, 117, 0.4);
-        }
-
-        .error-msg {
-            color: #ff3333;
-            margin-top: 15px;
-            font-size: 0.95rem;
-            display: none;
-        }
-
-        /* 2. شاشة العداد التنازلي الضخم */
-        #countdown-screen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #050507;
-            display: none; /* تظهر بعد كلمة السر */
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 1s ease-out, visibility 1s;
-        }
-
-        #countdown-text {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            letter-spacing: 2px;
-            font-weight: 300;
-        }
-
-        #timer {
-            font-size: 15rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            text-shadow: 0 0 50px rgba(255, 74, 117, 0.6);
-            animation: pulse 1s infinite alternate;
-            line-height: 1;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            100% { transform: scale(1.05); opacity: 1; }
-        }
-
-        /* 3. حاوية الألعاب النارية الحقيقية والكيك المتساقط */
-        #canvas-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 98;
-        }
-
-        canvas {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* تساقط الكيك الإيموجي */
-        .falling-cake {
-            position: fixed;
-            top: -50px;
-            font-size: 2.5rem;
-            z-index: 97;
-            pointer-events: none;
-            user-select: none;
-            animation: fall linear forwards;
-        }
-
-        @keyframes fall {
-            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(105vh) rotate(360deg); opacity: 0.3; }
-        }
-
-        /* 4. حاوية الموقع الرئيسي */
-        #main-content {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 2s ease-in-out;
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            z-index: 99;
-        }
-
-        #audio-container {
-            position: absolute;
-            width: 1px; height: 1px; padding: 0; margin: -1px;
-            overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
-        }
-
-        .hero-section {
-            text-align: center;
-            margin-top: 50px;
-            margin-bottom: 60px;
-            width: 100%;
-        }
-
-        .hero-title {
-            font-family: 'Reem Kufi', sans-serif;
-            font-size: 4.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #ff4a75, #ffd369, #ff8a9e);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-
-        /* صناديق الرسائل الكبيرة */
-        .content-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-            width: 100%;
-            margin-bottom: 50px;
-        }
-
-        .message-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .message-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--secondary-color);
-        }
-
-        .card-title {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 74, 117, 0.3);
-            padding-bottom: 10px;
-            display: inline-block;
-        }
-
-        .message-card p {
-            font-size: 1.35rem;
-            line-height: 2.2;
-            color: #e2e2e9;
-            text-align: justify;
-            font-weight: 300;
-            margin-bottom: 20px;
-        }
-
-        .highlight-text {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        @media (max-width: 768px) {
-            #timer { font-size: 9rem; }
-            .hero-title { font-size: 2.8rem; }
-            .message-card { padding: 25px; }
-            .message-card p { font-size: 1.15rem; line-height: 2; }
-        }
-    </style>
+    <!-- خط عربي -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <div id="password-screen">
-        <div class="login-box">
-            <h2>🔐 هذه المفاجأة محمية</h2>
-            <p style="margin-bottom: 15px; font-weight: 300; color: #aaa;">ادخل اسم صاحبة العيد ميلاد للدخول (بالإنجليزي):</p>
-            <input type="password" id="password-input" placeholder="اكتب الاسم هنا..." onkeypress="handleKeyPress(event)">
-            <button onclick="checkPassword()">افتح المفاجأة ✨</button>
-            <div id="error-message" class="error-msg">الاسم غير صحيح! حاول مجدداً دقق في الحروف 🎂</div>
-        </div>
-    </div>
+    <!-- خلفية النجوم والقلوب -->
+    <div class="background"></div>
+    <div id="hearts"></div>
 
-    <div id="countdown-screen">
-        <div id="countdown-text">جاهزة؟ المفاجأة تبدأ الآن...</div>
-        <div id="timer">5</div>
-    </div>
+    <main>
 
-    <div id="canvas-container">
-        <canvas id="fireworksCanvas"></canvas>
-    </div>
+        <!-- الصور -->
+        <section class="photos">
 
-    <div id="audio-container">
-        <div id="player"></div>
-    </div>
-
-    <div id="main-content">
-        
-        <header class="hero-section">
-            <h1 class="hero-title">عيد ميلاد سعيد، Mirae! 🎉</h1>
-            <p style="font-size: 1.5rem; color: var(--secondary-color); font-weight: 300;">اليوم ليس يوماً عادياً، إنه اليوم الذي أشرقتِ فيه على العالم</p>
-        </header>
-
-        <section class="content-grid">
-            
-            <div class="message-card">
-                <h2 class="card-title">✨ إلى الشخصية الاستثنائية Mirae</h2>
-                <p>
-                    في هذا اليوم الجميل والمميز جداً، نحتفل بوجودكِ الرائع في هذه الحياة. <span class="highlight-text">Mirae</span>، أنتِ لستِ مجرد شخص عابر يمر في الأعوام، بل أنتِ الضوء الساطع الذي يملأ الأماكن بالبهجة والسرور. كل عام وابتسامتكِ الجميلة هي مصدر تفاؤل وسعادة لكل من حولكِ، وكل عام والضحكة الصافية لا تفارق شفتيكِ أبد الدهر.
-                </p>
-                <p>
-                    أتمنى لكِ في عامكِ الجديد هذا أن تتحقق كل الأمنيات المؤجلة، وأن تفتح لكِ الحياة أبواباً من النجاح والتوفيق والمسارات المبهجة التي لا تنتهي. إن وجودكِ يضيف لمسة سحرية فريدة خاصة على هذا العالم، واليوم كل النجوم والكون يلمع في الفضاء احتفالاً بيوم ميلادكِ السعيد والبهيج.
-                </p>
+            <div class="photo-card left-card">
+                <div class="photo-label">من زمان جدًا 🥹❤️</div>
+                <img src="young.jpg" alt="صورتك وهي صغيرة">
+                <div class="heart">♡</div>
             </div>
 
-            <div class="message-card">
-                <h2 class="card-title">🎂 أمنيات مخلصة نابعة من القلب</h2>
-                <p>
-                    مرت سنة كاملة بكل ما فيها من تفاصيل وعقبات وتحديات، وتبدأ اليوم سنة جديدة ومشرقة من عمركِ نتمناها ونبتهل أن تكون مليئة بالسلام الداخلي المطمئن، وراحة البال الواسعة، والخطوات الثابتة نحو تحقيق كل الأحلام الكبيرة والصغيرة التي تطمحين وتتطلعين إليها دائماً. لا توجد في القاموس كلمات كافية لتعبر عن مدى تميزكِ ونقاء وصفاء قلبكِ الأبيض، فأنتِ تستحقين دائماً الأفضل والأروع في كل تفاصيل هذه الحياة.
-                </p>
-                <p>
-                    لتكن هذه السنة الجديدة بمثابة محطة كبرى لانطلاقات عظيمة، ولحظات حية لا تُنسى من الفرح الصافي المطلق، برفقة كل الأشخاص الذين يحبونكِ بصدق ويتمنون لكِ الخير والرفعة دائماً. <span class="highlight-text">سنة حلوة يا جميل</span>، وسنة مليئة بالنجاحات الباهرة التي تليق بشخصيتكِ الطموحة والمميزة والفريدة.
-                </p>
-            </div>
-
-            <div class="message-card" style="text-align: center;">
-                <h2 class="card-title">💫 رسالة خاصة لكِ وحدكِ وعميقة جداً</h2>
-                <p style="text-align: center; font-style: italic;">
-                    "دائماً تذكري وبشكل دائم أنكِ إنسانة قوية، مميزة للغاية، ونادرة، وقادرة بالكامل على صنع الفارق الإيجابي أينما حللتِ أو خطوتِ. لا تقبلي في حياتكِ بأقل مما تستحقين إطلاقاً، واجعلي هذا العام الجديد فرصة مثالية لتسطير وكتابة قصة نجاح باهرة جديدة تُضاف إلى كتاب وفصول حياتكِ الملهم والمبهر."
-                </p>
-                <p style="text-align: center; font-size: 1.7rem; font-weight: 700; color: var(--primary-color); margin-top: 25px; text-shadow: 0 0 10px rgba(255,74,117,0.3);">
-                    Happy Birthday, Mirae! Keep Shining Brightly! ✨🎈🎂
-                </p>
+            <div class="photo-card right-card">
+                <div class="photo-label">ودلوقتي بقيتي أحلى ❤️</div>
+                <img src="now.jpg" alt="صورتك دلوقتي">
+                <div class="heart">♡</div>
             </div>
 
         </section>
 
+
+        <!-- العنوان -->
+        <section class="hero">
+
+            <div class="small-hearts">♡ ♡ ♡</div>
+
+            <h1 id="mainTitle">
+                عيد ميلاد سعيد
+                <span id="girlName">يا أحلى حد</span>
+            </h1>
+
+            <p class="subtitle">
+                اليوم مش زي أي يوم...
+                <br>
+                النهارده اليوم اللي الدنيا بقت فيه أحلى ❤️
+            </p>
+
+        </section>
+
+
+        <!-- العد التنازلي -->
+        <section class="countdown-box">
+
+            <h2>🎂 باقي على عيد ميلادك</h2>
+
+            <div class="countdown">
+
+                <div class="time-box">
+                    <span id="days">00</span>
+                    <small>يوم</small>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="time-box">
+                    <span id="hours">00</span>
+                    <small>ساعة</small>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="time-box">
+                    <span id="minutes">00</span>
+                    <small>دقيقة</small>
+                </div>
+
+                <div class="separator">:</div>
+
+                <div class="time-box">
+                    <span id="seconds">00</span>
+                    <small>ثانية</small>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- رسالة عيد الميلاد -->
+        <section class="message-card">
+
+            <div class="balloons">🎈 💕 🎈</div>
+
+            <h2>رسالة ليكي ❤️</h2>
+
+            <p id="message">
+                مش عارف منين أبدأ، بس عارف إنك حاجة جميلة حصلت في حياتي.
+                وجودك بيخلي كل يوم له معنى، وابتسامتك لوحدها كفاية تخليني مبسوط.
+                <br><br>
+                النهارده عيد ميلادك، وأتمنى السنة الجديدة من حياتك تكون مليانة
+                ضحك وفرح ونجاح وكل حاجة نفسك فيها.
+                <br><br>
+                كل سنة وانتي بخير، وكل سنة وانتي أحلى واحدة في عيني،
+                وأتمنى أفضل موجود في حياتك وأشوفك مبسوطة دايمًا. ❤️
+            </p>
+
+            <div class="signature">
+                بحبك جدًا ❤️
+                <br>
+                <span>من: <b id="myName">اكتب اسمك هنا</b></span>
+            </div>
+
+        </section>
+
+
+        <!-- مشغل الأغنية -->
+        <section class="music-card">
+
+            <div class="music-info">
+                <div class="music-icon">🎵</div>
+
+                <div>
+                    <h3>أغنية ليكي ❤️</h3>
+                    <p>شغليها واسمعي الرسالة للآخر</p>
+                </div>
+            </div>
+
+            <audio id="song" controls>
+                <source src="song.mp3" type="audio/mpeg">
+                المتصفح لا يدعم تشغيل الصوت.
+            </audio>
+
+        </section>
+
+
+        <!-- زر الرسالة -->
+        <button id="loveButton" onclick="showLove()">
+            اضغطي هنا ❤️
+        </button>
+
+
+        <p class="footer">
+            اتعمل الموقع ده مخصوص علشانك ❤️
+        </p>
+
+    </main>
+
+
+    <!-- شاشة الاحتفال -->
+    <div id="birthdayScreen">
+
+        <div class="birthday-content">
+
+            <div class="big-heart">❤️</div>
+
+            <h1>كل سنة وانتي طيبة! 🎂</h1>
+
+            <h2 id="birthdayGirlName">يا أجمل إنسانة ❤️</h2>
+
+            <p>
+                النهارده يوم مميز جدًا...
+                <br>
+                لأنه اليوم اللي اتولدتي فيه ❤️
+            </p>
+
+            <button onclick="closeBirthday()">
+                افتحي رسالتي 💌
+            </button>
+
+        </div>
+
     </div>
 
-    <script>
-        // دالة التحقق من كلمة السر والاسم المتوافق
-        function checkPassword() {
-            const passwordInput = document.getElementById('password-input').value.trim().toLowerCase();
-            const errorMsg = document.getElementById('error-message');
-            
-            // كلمة السر المطلوبة هي اسم البنت "mirae"
-            if (passwordInput === "mirae") {
-                document.getElementById('password-screen').style.opacity = '0';
-                setTimeout(() => {
-                    document.getElementById('password-screen').style.display = 'none';
-                    document.getElementById('countdown-screen').style.display = 'flex';
-                    // تحميل أغنية يوتيوب بمجرد قبول كلمة السر تمهيداً لتشغيلها تلقائياً
-                    loadYouTubeAPI();
-                }, 800);
-            } else {
-                errorMsg.style.display = 'block';
-            }
-        }
 
-        function handleKeyPress(event) {
-            if (event.key === "Enter") {
-                checkPassword();
-            }
-        }
+    <script src="script.js"></script>
 
-        // تحميل واجهة مشغل يوتيوب
-        function loadYouTubeAPI() {
-            var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        }
-
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '1px', width: '1px',
-                videoId: 'KbtwC_0Uh40', // الرابط المرسل من قبلك
-                playerVars: { 'autoplay': 0, 'controls': 0, 'disablekb': 1, 'fs': 0, 'rel': 0, 'modestbranding': 1 },
-                events: { 'onReady': onPlayerReady }
-            });
-        }
-
-        function onPlayerReady(event) {
-            // يبدأ العداد فقط عندما يكون مشغل الأغنية في الخلفية جاهز تماماً لضمان التزامن المباشر
-            startCountdown();
-        }
-
-        // دالة العداد التنازلي من 5 إلى 0
-        function startCountdown() {
-            let count = 5;
-            const timerElement = document.getElementById('timer');
-            const countdownScreen = document.getElementById('countdown-screen');
-            const mainContent = document.getElementById('main-content');
-
-            const interval = setInterval(() => {
-                count--;
-                if (count > 0) {
-                    timerElement.textContent = count;
-                } else if (count === 0) {
-                    timerElement.textContent = "🎉";
-                } else {
-                    clearInterval(interval);
-                    
-                    // تشغيل الأغنية فوراً
-                    if(player && typeof player.playVideo === 'function') {
-                        player.playVideo();
-                    }
-
-                    // إخفاء العداد وإظهار شاشة الحفل الكبيرة
-                    countdownScreen.style.opacity = '0';
-                    setTimeout(() => {
-                        countdownScreen.style.display = 'none';
-                        mainContent.style.display = 'flex';
-                        setTimeout(() => {
-                            mainContent.style.opacity = '1';
-                            mainContent.style.visibility = 'visible';
-                        }, 50);
-                    }, 1000);
-
-                    // تفعيل الألعاب النارية الحقيقية وتساقط الكيك الاحتفالي
-                    initFireworks();
-                    startFallingCakes();
-                }
-            }, 1000);
-        }
-
-        /* ─── نظام تساقط كعك وحلويات العيد ميلاد ─── */
-        function startFallingCakes() {
-            const cakeEmojis = ['🎂', '🍰', '🧁', '🍩', '🎉', '✨', '🎈'];
-            setInterval(() => {
-                const cake = document.createElement('div');
-                cake.classList.add('falling-cake');
-                cake.textContent = cakeEmojis[Math.floor(Math.random() * cakeEmojis.length)];
-                cake.style.left = Math.random() * 100 + 'vw';
-                cake.style.fontSize = (Math.random() * 1.5 + 1.5) + 'rem'; // مقاسات عشوائية فخمة
-                cake.style.animationDuration = (Math.random() * 4 + 4) + 's'; // سرعة هبوط الكيك
-                document.body.appendChild(cake);
-
-                setTimeout(() => { cake.remove(); }, 8000);
-            }, 350); // يفرز كعكة جديدة كل ثلث ثانية تقريباً
-        }
-
-        /* ─── محرك الألعاب النارية الحقيقية (Fireworks Engine) باستخدام الكانفاس ─── */
-        function initFireworks() {
-            const canvas = document.getElementById('fireworksCanvas');
-            const ctx = canvas.getContext('2d');
-            
-            function resizeCanvas() {
-                canvas.width = window.innerWidth;
-                canvas.height = window.innerHeight;
-            }
-            window.addEventListener('resize', resizeCanvas);
-            resizeCanvas();
-
-            let fireworks = [];
-            let particles = [];
-
-            class Firework {
-                constructor(sx, sy, tx, ty) {
-                    this.x = sx; this.y = sy;
-                    this.sx = sx; this.sy = sy;
-                    this.tx = tx; this.ty = ty;
-                    this.distanceToTarget = calculateDistance(sx, sy, tx, ty);
-                    this.distanceTraveled = 0;
-                    this.coordinates = [];
-                    this.coordinateCount = 3;
-                    while(this.coordinateCount--) { this.coordinates.push([this.x, this.y]); }
-                    this.angle = Math.atan2(ty - sy, tx - sx);
-                    this.speed = 2;
-                    this.acceleration = 1.05;
-                    this.brightness = random(50, 70);
-                    this.hue = random(0, 360);
-                }
-                update(index) {
-                    this.coordinates.pop();
-                    this.coordinates.unshift([this.x, this.y]);
-                    this.speed *= this.acceleration;
-                    let vx = Math.cos(this.angle) * this.speed;
-                    let vy = Math.sin(this.angle) * this.speed;
-                    this.distanceTraveled = calculateDistance(this.sx, this.sy, this.x + vx, this.y + vy);
-                    
-                    if(this.distanceTraveled >= this.distanceToTarget) {
-                        createParticles(this.tx, this.ty, this.hue);
-                        fireworks.splice(index, 1);
-                    } else {
-                        this.x += vx; this.y += vy;
-                    }
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
-                    ctx.lineTo(this.x, this.y);
-                    ctx.strokeStyle = `hsl(${this.hue}, 100%, ${this.brightness}%)`;
-                    ctx.lineWidth = 2;
-                    ctx.stroke();
-                }
-            }
-
-            class Particle {
-                constructor(x, y, hue) {
-                    this.x = x; this.y = y;
-                    this.coordinates = [];
-                    this.coordinateCount = 5;
-                    while(this.coordinateCount--) { this.coordinates.push([this.x, this.y]); }
-                    this.angle = random(0, Math.PI * 2);
-                    this.speed = random(1, 10);
-                    this.friction = 0.95;
-                    this.gravity = 1;
-                    this.hue = random(hue - 20, hue + 20);
-                    this.brightness = random(50, 80);
-                    this.alpha = 1;
-                    this.decay = random(0.015, 0.03);
-                }
-                update(index) {
-                    this.coordinates.pop();
-                    this.coordinates.unshift([this.x, this.y]);
-                    this.speed *= this.friction;
-                    this.x += Math.cos(this.angle) * this.speed;
-                    this.y += Math.sin(this.angle) * this.speed + this.gravity;
-                    this.alpha -= this.decay;
-                    if(this.alpha <= this.decay) { particles.splice(index, 1); }
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length - 1][1]);
-                    ctx.lineTo(this.x, this.y);
-                    ctx.strokeStyle = `hsla(${this.hue}, 100%, ${this.brightness}%, ${this.alpha})`;
-                    ctx.lineWidth = 2;
-                    ctx.stroke();
-                }
-            }
-
-            function calculateDistance(p1x, p1y, p2x, p2y) { return Math.sqrt(Math.pow(p1x - p2x, 2) + Math.pow(p1y - p2y, 2)); }
-            function random(min, max) { return Math.random() * (max - min) + min; }
-
-            function createParticles(x, y, hue) {
-                let particleCount = 40;
-                while(particleCount--) { particles.push(new Particle(x, y, hue)); }
-            }
-
-            let timerTick = 0;
-            let timerTotal = 40; // معدل إطلاق عشوائي تلقائي للألعاب النارية في الجو
-
-            function loop() {
-                requestAnimationFrame(loop);
-                ctx.globalCompositeOperation = 'destination-out';
-                ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                ctx.globalCompositeOperation = 'lighter';
-                
-                let i = fireworks.length;
-                while(i--) { fireworks[i].draw(); fireworks[i].update(i); }
-                let j = particles.length;
-                while(j--) { particles[j].draw(); particles[j].update(j); }
-                
-                if(timerTick >= timerTotal) {
-                    fireworks.push(new Firework(canvas.width / 2, canvas.height, random(0, canvas.width), random(0, canvas.height / 2)));
-                    timerTotal = random(20, 60);
-                    timerTick = 0;
-                } else { timerTick++; }
-            }
-            loop();
-        }
-    </script>
 </body>
 </html>
