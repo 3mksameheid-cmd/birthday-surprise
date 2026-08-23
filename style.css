@@ -1,0 +1,88 @@
+body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    margin: 0;
+    padding: 20px;
+    color: #333;
+    text-align: center;
+    direction: rtl;
+}
+
+main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.photo-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.photo-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.hero, .countdown-box, .message-card, .music-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+}
+
+.time-box span {
+    font-size: 1.8rem;
+    color: #e91e63;
+    display: block;
+}
+
+button {
+    background: #e91e63;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-family: 'Cairo', sans-serif;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #c2185b;
+}
+
+#birthdayScreen {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.85);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.birthday-content {
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 80%;
+}
